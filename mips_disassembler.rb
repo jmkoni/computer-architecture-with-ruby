@@ -1,55 +1,71 @@
 require 'fileutils'
+# @author Jennifer Konikowski <jmkoni@icloud.com>
+# This class disassembles instructions from hex or binary to human readable Mips
+# Initialization:
+#     MipsTranslator.new(array_of_instructions, starting_address, is_hex)
+# Definition of parameters:
+#     array_of_instructions: an array of instructions in hex or binary.
+#                            Will generally be strings.
+#     starting_address: whatever address you want the instructions to start at
+#     is_hex: true or false, depending on whether or not the instructions are hex or not
+#             true if hex, false if binary
+#
+# Example:
+#     > array_of_hex = ["0x022DA822",
+#                       "0x8EF30018",
+#                       "0x12A70004",
+#                       "0x02689820",
+#                       "0xAD930018",
+#                       "0x02697824",
+#                       "0xAD8FFFF4",
+#                       "0x018C6020",
+#                       "0x02A4A825",
+#                       "0x158FFFF6",
+#                       "0x8E59FFF0"]
+#
+#     > mips = MipsDisassembler.new(array_of_hex, "7A060", true)
+#     > results = mips.disassemble
+#     > results.each { |instruction| puts instruction }
+#
+# Output:
+#     7A060 sub $21 $17 $13
+#     7a064 lw $19, 24 ($23)
+#     7a068 beq $7, $21, address 0x7a07c
+#     7a06c add $19 $19 $8
+#     7a070 sw $19, 24 ($12)
+#     7a074 and $15 $19 $9
+#     7a078 sw $15, -12 ($12)
+#     7a07c add $12 $12 $12
+#     7a080 or $21 $21 $4
+#     7a084 bne $15, $12, address 0xba060
+#     7a088 lw $25, -16 ($18)
 class MipsDisassembler
-  # This class disassembles instructions from hex or binary to human readable Mips
-  # Initialization: MipsTranslator.new(array_of_instructions, starting_address, is_hex)
-  # Definition of parameters:
-  #     array_of_instructions: an array of instructions in hex or binary.
-  #                            Will generally be strings.
-  #     starting_address: whatever address you want the instructions to start at
-  #     is_hex: true or false, depending on whether or not the instructions are hex or not
-  #             true if hex, false if binary
-  #
-  # Example:
-  # > array_of_hex = ["0x022DA822",
-  #                   "0x8EF30018",
-  #                   "0x12A70004",
-  #                   "0x02689820",
-  #                   "0xAD930018",
-  #                   "0x02697824",
-  #                   "0xAD8FFFF4",
-  #                   "0x018C6020",
-  #                   "0x02A4A825",
-  #                   "0x158FFFF6",
-  #                   "0x8E59FFF0"]
-  #
-  # > mips = MipsDisassembler.new(array_of_hex, "7A060", true)
-  # > results = mips.disassemble
-  # > results.each { |instruction| puts instruction }
-  #
-  # Output:
-  # 7A060 sub $21 $17 $13
-  # 7a064 lw $19, 24 ($23)
-  # 7a068 beq $7, $21, address 0x7a07c
-  # 7a06c add $19 $19 $8
-  # 7a070 sw $19, 24 ($12)
-  # 7a074 and $15 $19 $9
-  # 7a078 sw $15, -12 ($12)
-  # 7a07c add $12 $12 $12
-  # 7a080 or $21 $21 $4
-  # 7a084 bne $15, $12, address 0xba060
-  # 7a088 lw $25, -16 ($18)
-
+  # Creates a new instance of MipsDisassembler
+  # @param array_of_instructions [Array] the array of string instructions
+  # @param starting_address [String] starting address for instructions, should be a string hexadecimal value
+  # @param is_hex [Boolean] true if array of instructions is in hex, false if in binary
+  # @note Each object in array_of_instructions should be a string representation of either binary or hexadecimal number
+  # @return [MipsDisassembler] a new MipsDisassembler object
+  # @example Create an object
+  #    mips = MipsDisassembler.new(["0x022DA822", "0x8EF30018", "0x12A70004"], "7A060", true)
   def initialize(array_of_instructions, starting_address, is_hex)
     @instructions = array_of_instructions
     @starting_address = starting_address
     @is_hex = is_hex
   end
 
+  # Takes binary/hex instructions and starting address and return an array of MIPs instructions.
+  # @note Determines if r-format or i-format and parses accordingly.
+  # @return [Array] an array of MIPs instructions, human-readable
+  # @example Disassemble instructions
+  #    mips.disassemble => ["7A060 sub $21 $17 $13", "7a064 lw $19, 24 ($23)", "7a068 beq $7, $21, address 0x7a07c"]
   def disassemble
     disassemble_instructions(@instructions, @starting_address, @is_hex)
   end
 
-  # write MIPs instructions to file mips_results.txt
+  # write MIPs instructions to file
+  # @note File "mips_results.txt" will be created in same directory as code
+  # @return [void]
   def output_to_file
     File.open("mips_results.txt", "w") do |f|
       in_file = ""
