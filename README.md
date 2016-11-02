@@ -9,9 +9,9 @@ While learning more about computer architecture, I wrote some Ruby scripts:
 ### MIPS Disassembler
 This class disassembles instructions from hex or binary to human readable Mips
 ####Initialization:####
-    ```ruby
-    MipsTranslator.new(array_of_instructions, starting_address, is_hex)
-    ```
+```ruby
+MipsTranslator.new(array_of_instructions, starting_address, is_hex)
+```
 ####Definition of parameters:####
 
 * array_of_instructions: an array of instructions in hex or binary. Will generally be strings.
@@ -19,21 +19,23 @@ This class disassembles instructions from hex or binary to human readable Mips
 * is_hex: true or false, depending on whether or not the instructions are hex or not true if hex, false if binary
 
 ####Example:####
-    > array_of_hex = ["0x022DA822",
-                      "0x8EF30018",
-                      "0x12A70004",
-                      "0x02689820",
-                      "0xAD930018",
-                      "0x02697824",
-                      "0xAD8FFFF4",
-                      "0x018C6020",
-                      "0x02A4A825",
-                      "0x158FFFF6",
-                      "0x8E59FFF0"]
+```ruby
+array_of_hex = ["0x022DA822",
+                "0x8EF30018",
+                "0x12A70004",
+                "0x02689820",
+                "0xAD930018",
+                "0x02697824",
+                "0xAD8FFFF4",
+                "0x018C6020",
+                "0x02A4A825",
+                "0x158FFFF6",
+                "0x8E59FFF0"]
 
-    > mips = MipsDisassembler.new(array_of_hex, "7A060", true)
-    > results = mips.disassemble
-    > results.each { |instruction| puts instruction }
+mips = MipsDisassembler.new(array_of_hex, "7A060", true)
+results = mips.disassemble
+results.each { |instruction| puts instruction }
+```
 
 ####Output:####
     7A060 sub $21 $17 $13
@@ -56,9 +58,9 @@ take in an array of actions. It could easily be rewritten to take in user
 input instead.
 
 ####Initialization:####
-    ```ruby
-    cache = CacheSim::Cache.new(size)
-    ```
+```ruby
+cache = CacheSim::Cache.new(size)
+```
 
 ####Definition of parameters:####
 
@@ -66,10 +68,10 @@ input instead.
 * operations: a list of operations Ex: ["R", "4C3", "D", "W", "14C", "99"]
 
 ####Example####
-    ```ruby
-    cache = CacheSim::Cache.new(16)
-    cache.perform_actions(["R", "4C3", "D", "W", "14C", "99"])
-    ```
+```ruby
+cache = CacheSim::Cache.new(16)
+cache.perform_actions(["R", "4C3", "D", "W", "14C", "99"])
+```
 
 ####Output####
     (R)ead, (W)rite, or (D)isplay cache?
