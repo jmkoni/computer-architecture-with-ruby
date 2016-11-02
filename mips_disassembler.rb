@@ -2,7 +2,7 @@ require 'fileutils'
 # @author Jennifer Konikowski <jmkoni@icloud.com>
 # This class disassembles instructions from hex or binary to human readable Mips
 # Initialization:
-#     MipsTranslator.new(array_of_instructions, starting_address, is_hex)
+#     MipsDisassember.new(array_of_instructions, starting_address, is_hex)
 # Definition of parameters:
 #     array_of_instructions: an array of instructions in hex or binary.
 #                            Will generally be strings.

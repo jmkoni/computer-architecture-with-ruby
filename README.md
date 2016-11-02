@@ -10,7 +10,7 @@ While learning more about computer architecture, I wrote some Ruby scripts:
 This class disassembles instructions from hex or binary to human readable Mips
 ####Initialization:####
 ```ruby
-MipsTranslator.new(array_of_instructions, starting_address, is_hex)
+MipsDisassember.new(array_of_instructions, starting_address, is_hex)
 ```
 ####Definition of parameters:####
 

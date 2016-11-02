@@ -420,14 +420,14 @@ of data</p>
       <pre class="lines">
 
 
-80
 81
 82
 83
-84</pre>
+84
+85</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'cache_simulation.rb', line 80</span>
+      <pre class="code"><span class="info file"># File 'cache_simulation.rb', line 81</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_size'>size</span><span class='rparen'>)</span>
   <span class='ivar'>@size</span> <span class='op'>=</span> <span class='id identifier rubyid_size'>size</span>
@@ -490,12 +490,12 @@ of data</p>
       <pre class="lines">
 
 
-73
 74
-75</pre>
+75
+76</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'cache_simulation.rb', line 73</span>
+      <pre class="code"><span class="info file"># File 'cache_simulation.rb', line 74</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_main_memory'>main_memory</span>
   <span class='ivar'>@main_memory</span>
@@ -551,12 +551,12 @@ of data</p>
       <pre class="lines">
 
 
-67
 68
-69</pre>
+69
+70</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'cache_simulation.rb', line 67</span>
+      <pre class="code"><span class="info file"># File 'cache_simulation.rb', line 68</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_size'>size</span>
   <span class='ivar'>@size</span>
@@ -612,12 +612,12 @@ of data</p>
       <pre class="lines">
 
 
-70
 71
-72</pre>
+72
+73</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'cache_simulation.rb', line 70</span>
+      <pre class="code"><span class="info file"># File 'cache_simulation.rb', line 71</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_slots'>slots</span>
   <span class='ivar'>@slots</span>
@@ -660,15 +660,15 @@ of data</p>
       <pre class="lines">
 
 
-176
 177
 178
 179
 180
-181</pre>
+181
+182</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'cache_simulation.rb', line 176</span>
+      <pre class="code"><span class="info file"># File 'cache_simulation.rb', line 177</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_display_cache'>display_cache</span>
   <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Slot | Valid | Tag | Data </span><span class='tstring_end'>&quot;</span></span>
@@ -728,15 +728,15 @@ it&#39;s a hit or a miss, then reads the data from the cache.</p>
       <pre class="lines">
 
 
-167
 168
 169
 170
 171
-172</pre>
+172
+173</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'cache_simulation.rb', line 167</span>
+      <pre class="code"><span class="info file"># File 'cache_simulation.rb', line 168</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_display_read'>display_read</span><span class='lparen'>(</span><span class='id identifier rubyid_address'>address</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>What address would you like read?</span><span class='tstring_end'>&quot;</span></span>
@@ -812,17 +812,17 @@ determines if it&#39;s a hit or a miss, then writes that data to the cache.</p>
       <pre class="lines">
 
 
-154
 155
 156
 157
 158
 159
 160
-161</pre>
+161
+162</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'cache_simulation.rb', line 154</span>
+      <pre class="code"><span class="info file"># File 'cache_simulation.rb', line 155</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_display_write'>display_write</span><span class='lparen'>(</span><span class='id identifier rubyid_address'>address</span><span class='comma'>,</span> <span class='id identifier rubyid_data'>data</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>What address would you like to write to?</span><span class='tstring_end'>&quot;</span></span>
@@ -962,7 +962,6 @@ address.</p>
       <pre class="lines">
 
 
-127
 128
 129
 130
@@ -982,10 +981,11 @@ address.</p>
 144
 145
 146
-147</pre>
+147
+148</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'cache_simulation.rb', line 127</span>
+      <pre class="code"><span class="info file"># File 'cache_simulation.rb', line 128</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_perform_actions'>perform_actions</span><span class='lparen'>(</span><span class='id identifier rubyid_op'>op</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_i'>i</span> <span class='op'>=</span> <span class='int'>0</span>
@@ -1018,7 +1018,7 @@ address.</p>
 </div>
 
       <div id="footer">
-  Generated on Wed Nov  2 14:48:26 2016 by
+  Generated on Wed Nov  2 15:17:27 2016 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.5 (ruby-2.2.1).
 </div>
