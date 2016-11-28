@@ -5,9 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>
   Class: PipelineSim
-  
+
     &mdash; Documentation by YARD 0.9.5
-  
+
 </title>
 
   <link rel="stylesheet" href="css/style.css" type="text/css" charset="utf-8" />
@@ -35,16 +35,16 @@
     <div id="main" tabindex="-1">
       <div id="header">
         <div id="menu">
-  
-    <a href="_index.html">Index (P)</a> &raquo;
-    
-    
+
+    <a href="index.html">Index (P)</a> &raquo;
+
+
     <span class="title">PipelineSim</span>
-  
+
 </div>
 
         <div id="search">
-  
+
     <a class="full_list_link" id="class_list_link"
         href="class_list.html">
 
@@ -54,7 +54,7 @@
           <rect x="0" y="20" width="24" height="4" rx="1" ry="1"></rect>
         </svg>
     </a>
-  
+
 </div>
         <div class="clear"></div>
       </div>
@@ -62,48 +62,48 @@
       <iframe id="search_frame" src="class_list.html"></iframe>
 
       <div id="content"><h1>Class: PipelineSim
-  
-  
-  
+
+
+
 </h1>
 <div class="box_info">
-  
+
   <dl>
     <dt>Inherits:</dt>
     <dd>
       <span class="inheritName">Object</span>
-      
+
         <ul class="fullTree">
           <li>Object</li>
-          
+
             <li class="next">PipelineSim</li>
-          
+
         </ul>
         <a href="#" class="inheritanceTree">show all</a>
-      
+
     </dd>
   </dl>
-  
 
-  
-  
-  
-  
-  
 
-  
 
-  
+
+
+
+
+
+
+
+
   <dl>
     <dt>Defined in:</dt>
     <dd>pipeline_simulation.rb</dd>
   </dl>
-  
+
 </div>
 
 <h2>Overview</h2><div class="docstring">
   <div class="discussion">
-    
+
 <p>This class represents a simulation of a computer pipeline. Initialization:</p>
 
 <pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_simulation'>simulation</span> <span class='op'>=</span> <span class='const'>PipelineSim</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_starting_address'>starting_address</span><span class='rparen'>)</span>
@@ -132,33 +132,33 @@ instructions: array of mips instructions, in hex</code></pre>
   </div>
 </div>
 <div class="tags">
-  
+
 <p class="tag_title">Author:</p>
 <ul class="author">
-  
+
     <li>
-      
-      
-      
-      
-        
+
+
+
+
+
         <div class='inline'>
 <p>Jennifer Konikowski &lt;jmkoni@icloud.com&gt;</p>
 </div>
-      
+
     </li>
-  
+
 </ul>
 
 </div><h2>Defined Under Namespace</h2>
 <p class="children">
-  
-    
-  
-    
+
+
+
+
       <strong class="classes">Classes:</strong> <span class='object_link'><a href="PipelineSim/MainMem.html" title="PipelineSim::MainMem (class)">MainMem</a></span>, <span class='object_link'><a href="PipelineSim/PipelineRegister.html" title="PipelineSim::PipelineRegister (class)">PipelineRegister</a></span>, <span class='object_link'><a href="PipelineSim/Regs.html" title="PipelineSim::Regs (class)">Regs</a></span>
-    
-  
+
+
 </p>
 
 
@@ -166,483 +166,483 @@ instructions: array of mips instructions, in hex</code></pre>
 
   <h2>Instance Attribute Summary <small><a href="#" class="summary_toggle">collapse</a></small></h2>
   <ul class="summary">
-    
+
       <li class="public ">
   <span class="summary_signature">
-    
+
       <a href="#cycle_num-instance_method" title="#cycle_num (instance method)">#<strong>cycle_num</strong>  &#x21d2; Integer </a>
-    
 
-    
+
+
   </span>
-  
-  
-  
-    
-    
-  
-  
-  
-  
-  
 
-  
+
+
+
+
+
+
+
+
+
+
+
     <span class="summary_desc"><div class='inline'>
 <p>Returns (and sets) cycle number.</p>
 </div></span>
-  
+
 </li>
 
-    
+
       <li class="public ">
   <span class="summary_signature">
-    
+
       <a href="#ExMemRegister-instance_method" title="#ExMemRegister (instance method)">#<strong>ExMemRegister</strong>  &#x21d2; PipelineRegister </a>
-    
 
-    
+
+
   </span>
-  
-  
-  
-    
-    
-  
-  
-  
-  
-  
 
-  
+
+
+
+
+
+
+
+
+
+
+
     <span class="summary_desc"><div class='inline'>
 <p>Returns (and sets) current content of the EX/MEM Register.</p>
 </div></span>
-  
+
 </li>
 
-    
+
       <li class="public ">
   <span class="summary_signature">
-    
+
       <a href="#IdExRegister-instance_method" title="#IdExRegister (instance method)">#<strong>IdExRegister</strong>  &#x21d2; PipelineRegister </a>
-    
 
-    
+
+
   </span>
-  
-  
-  
-    
-    
-  
-  
-  
-  
-  
 
-  
+
+
+
+
+
+
+
+
+
+
+
     <span class="summary_desc"><div class='inline'>
 <p>Returns (and sets) current content of the ID/EX Register.</p>
 </div></span>
-  
+
 </li>
 
-    
+
       <li class="public ">
   <span class="summary_signature">
-    
+
       <a href="#IfIdRegister-instance_method" title="#IfIdRegister (instance method)">#<strong>IfIdRegister</strong>  &#x21d2; PipelineRegister </a>
-    
 
-    
+
+
   </span>
-  
-  
-  
-    
-    
-  
-  
-  
-  
-  
 
-  
+
+
+
+
+
+
+
+
+
+
+
     <span class="summary_desc"><div class='inline'>
 <p>Returns (and sets) current content of the IF/ID Register.</p>
 </div></span>
-  
+
 </li>
 
-    
+
       <li class="public ">
   <span class="summary_signature">
-    
+
       <a href="#mainMem-instance_method" title="#mainMem (instance method)">#<strong>mainMem</strong>  &#x21d2; MainMem </a>
-    
 
-    
+
+
   </span>
-  
-  
-  
-    
-    
-  
-  
-  
-  
-  
 
-  
+
+
+
+
+
+
+
+
+
+
+
     <span class="summary_desc"><div class='inline'>
 <p>Returns (and sets) main memory.</p>
 </div></span>
-  
+
 </li>
 
-    
+
       <li class="public ">
   <span class="summary_signature">
-    
+
       <a href="#MemWbRegister-instance_method" title="#MemWbRegister (instance method)">#<strong>MemWbRegister</strong>  &#x21d2; PipelineRegister </a>
-    
 
-    
+
+
   </span>
-  
-  
-  
-    
-    
-  
-  
-  
-  
-  
 
-  
+
+
+
+
+
+
+
+
+
+
+
     <span class="summary_desc"><div class='inline'>
 <p>Returns (and sets) current content of the MEM/WB Register.</p>
 </div></span>
-  
+
 </li>
 
-    
+
       <li class="public ">
   <span class="summary_signature">
-    
+
       <a href="#regs-instance_method" title="#regs (instance method)">#<strong>regs</strong>  &#x21d2; Regs </a>
-    
 
-    
+
+
   </span>
-  
-  
-  
-    
-    
-  
-  
-  
-  
-  
 
-  
+
+
+
+
+
+
+
+
+
+
+
     <span class="summary_desc"><div class='inline'>
 <p>Returns (and sets) registers.</p>
 </div></span>
-  
+
 </li>
 
-    
+
       <li class="public ">
   <span class="summary_signature">
-    
+
       <a href="#starting_address-instance_method" title="#starting_address (instance method)">#<strong>starting_address</strong>  &#x21d2; String </a>
-    
 
-    
+
+
   </span>
-  
-  
-  
-    
-      <span class="note title readonly">readonly</span>
-    
-    
-  
-  
-  
-  
-  
 
-  
+
+
+
+      <span class="note title readonly">readonly</span>
+
+
+
+
+
+
+
+
+
     <span class="summary_desc"><div class='inline'>
 <p>Returns starting_address.</p>
 </div></span>
-  
+
 </li>
 
-    
+
   </ul>
 
 
 
 
-  
+
     <h2>
       Instance Method Summary
       <small><a href="#" class="summary_toggle">collapse</a></small>
     </h2>
 
     <ul class="summary">
-      
+
         <li class="public ">
   <span class="summary_signature">
-    
+
       <a href="#copyWriteToRead-instance_method" title="#copyWriteToRead (instance method)">#<strong>copyWriteToRead</strong>  &#x21d2; void </a>
-    
 
-    
+
+
   </span>
-  
-  
-  
-  
-  
-  
-  
 
-  
+
+
+
+
+
+
+
+
     <span class="summary_desc"><div class='inline'>
 <p>Copies the write side of each PipelineRegister to the read side of that
 register.</p>
 </div></span>
-  
+
 </li>
 
-      
+
         <li class="public ">
   <span class="summary_signature">
-    
+
       <a href="#exStage-instance_method" title="#exStage (instance method)">#<strong>exStage</strong>  &#x21d2; void </a>
-    
 
-    
+
+
   </span>
-  
-  
-  
-  
-  
-  
-  
 
-  
+
+
+
+
+
+
+
+
     <span class="summary_desc"><div class='inline'>
 <p>exStage: Execute Performs the instruction from the read side of the ID/EX
 Register and writes the results to the write side of the ID/EX Register.</p>
 </div></span>
-  
+
 </li>
 
-      
+
         <li class="public ">
   <span class="summary_signature">
-    
+
       <a href="#idStage-instance_method" title="#idStage (instance method)">#<strong>idStage</strong>  &#x21d2; void </a>
-    
 
-    
+
+
   </span>
-  
-  
-  
-  
-  
-  
-  
 
-  
+
+
+
+
+
+
+
+
     <span class="summary_desc"><div class='inline'>
 <p>idStage: Instruction Decode Reads the instruction from the read side of the
 IF/ID Register, decodes it, and writes the results to the write side of the
 ID/EX Register.</p>
 </div></span>
-  
+
 </li>
 
-      
+
         <li class="public ">
   <span class="summary_signature">
-    
+
       <a href="#ifStage-instance_method" title="#ifStage (instance method)">#<strong>ifStage</strong>(instruction)  &#x21d2; void </a>
-    
 
-    
+
+
   </span>
-  
-  
-  
-  
-  
-  
-  
 
-  
+
+
+
+
+
+
+
+
     <span class="summary_desc"><div class='inline'>
 <p>ifStage: Instruction Fetch Fetch the next instruction and write it to the
 write side of the IF/ID Register.</p>
 </div></span>
-  
+
 </li>
 
-      
+
         <li class="public ">
   <span class="summary_signature">
-    
+
       <a href="#initialize-instance_method" title="#initialize (instance method)">#<strong>initialize</strong>(starting_address)  &#x21d2; PipelineSim </a>
-    
 
-    
+
+
   </span>
-  
-  
-    <span class="note title constructor">constructor</span>
-  
-  
-  
-  
-  
-  
 
-  
+
+    <span class="note title constructor">constructor</span>
+
+
+
+
+
+
+
+
     <span class="summary_desc"><div class='inline'>
 <p>Initializes new PipelineSim object.</p>
 </div></span>
-  
+
 </li>
 
-      
+
         <li class="public ">
   <span class="summary_signature">
-    
+
       <a href="#memStage-instance_method" title="#memStage (instance method)">#<strong>memStage</strong>  &#x21d2; void </a>
-    
 
-    
+
+
   </span>
-  
-  
-  
-  
-  
-  
-  
 
-  
+
+
+
+
+
+
+
+
     <span class="summary_desc"><div class='inline'>
 <p>memStage: Memory Access If the instruction is a load, then we get the data
 from the address calculated in the Execute stage and store it in the
 register.</p>
 </div></span>
-  
+
 </li>
 
-      
+
         <li class="public ">
   <span class="summary_signature">
-    
+
       <a href="#printOutEverything-instance_method" title="#printOutEverything (instance method)">#<strong>printOutEverything</strong>  &#x21d2; void </a>
-    
 
-    
+
+
   </span>
-  
-  
-  
-  
-  
-  
-  
 
-  
+
+
+
+
+
+
+
+
     <span class="summary_desc"><div class='inline'>
 <p>Prints out current clock cycle, registers, and all contents of the pipeline
 registers.</p>
 </div></span>
-  
+
 </li>
 
-      
+
         <li class="public ">
   <span class="summary_signature">
-    
+
       <a href="#runthrough-instance_method" title="#runthrough (instance method)">#<strong>runthrough</strong>(instructions)  &#x21d2; Object </a>
-    
 
-    
+
+
   </span>
-  
-  
-  
-  
-  
-  
-  
 
-  
+
+
+
+
+
+
+
+
     <span class="summary_desc"><div class='inline'>
 <p>MEM/WB Register Read     ——————–     control = 000000000.</p>
 </div></span>
-  
+
 </li>
 
-      
+
         <li class="public ">
   <span class="summary_signature">
-    
+
       <a href="#wbStage-instance_method" title="#wbStage (instance method)">#<strong>wbStage</strong>  &#x21d2; void </a>
-    
 
-    
+
+
   </span>
-  
-  
-  
-  
-  
-  
-  
 
-  
+
+
+
+
+
+
+
+
     <span class="summary_desc"><div class='inline'>
 <p>wbStage: Register Write Back If writing to registers (add, sub, or load),
 then write the given value to the register.</p>
 </div></span>
-  
+
 </li>
 
-      
+
     </ul>
-  
+
 
 <div id="constructor_details" class="method_details_list">
   <h2>Constructor Details</h2>
-  
+
     <div class="method_details first">
   <h3 class="signature first" id="initialize-instance_method">
-  
-    #<strong>initialize</strong>(starting_address)  &#x21d2; <tt><span class='object_link'><a href="" title="PipelineSim (class)">PipelineSim</a></span></tt> 
-  
 
-  
+    #<strong>initialize</strong>(starting_address)  &#x21d2; <tt><span class='object_link'><a href="" title="PipelineSim (class)">PipelineSim</a></span></tt>
 
-  
+
+
+
+
 </h3><div class="docstring">
   <div class="discussion">
-    
+
   <div class="note notetag">
     <strong>Note:</strong>
     <div class='inline'>
@@ -657,37 +657,37 @@ then write the given value to the register.</p>
   </div>
 </div>
 <div class="tags">
-  
+
   <div class="examples">
     <p class="tag_title">Examples:</p>
-    
-      
+
+
         <p class="example_title"><div class='inline'>
 <p>Create a new pipeline simulation</p>
 </div></p>
-      
+
       <pre class="example code"><code><span class='id identifier rubyid_simulation'>simulation</span> <span class='op'>=</span> <span class='const'>PipelineSim</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>0x70000</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span></code></pre>
-    
+
   </div>
 <p class="tag_title">Parameters:</p>
 <ul class="param">
-  
+
     <li>
-      
+
         <span class='name'>starting_address</span>
-      
-      
+
+
         <span class='type'>(<tt>String</tt>)</span>
-      
-      
-      
+
+
+
         &mdash;
         <div class='inline'>
 <p>starting address in hex</p>
 </div>
-      
+
     </li>
-  
+
 </ul>
 
 
@@ -725,50 +725,50 @@ then write the given value to the register.</p>
   </tr>
 </table>
 </div>
-  
+
 </div>
 
   <div id="instance_attr_details" class="attr_details">
     <h2>Instance Attribute Details</h2>
-    
-      
+
+
       <span id="cycle_num=-instance_method"></span>
       <div class="method_details first">
   <h3 class="signature first" id="cycle_num-instance_method">
-  
-    #<strong>cycle_num</strong>  &#x21d2; <tt>Integer</tt> 
-  
 
-  
+    #<strong>cycle_num</strong>  &#x21d2; <tt>Integer</tt>
 
-  
+
+
+
+
 </h3><div class="docstring">
   <div class="discussion">
-    
+
 <p>Returns (and sets) cycle number</p>
 
 
   </div>
 </div>
 <div class="tags">
-  
+
 <p class="tag_title">Returns:</p>
 <ul class="return">
-  
+
     <li>
-      
-      
+
+
         <span class='type'>(<tt>Integer</tt>)</span>
-      
-      
-      
+
+
+
         &mdash;
         <div class='inline'>
 <p>current cycle number</p>
 </div>
-      
+
     </li>
-  
+
 </ul>
 
 </div><table class="source_code">
@@ -791,45 +791,45 @@ then write the given value to the register.</p>
   </tr>
 </table>
 </div>
-    
-      
+
+
       <span id="ExMemRegister=-instance_method"></span>
       <div class="method_details ">
   <h3 class="signature " id="ExMemRegister-instance_method">
-  
-    #<strong>ExMemRegister</strong>  &#x21d2; <tt><span class='object_link'><a href="PipelineSim/PipelineRegister.html" title="PipelineSim::PipelineRegister (class)">PipelineRegister</a></span></tt> 
-  
 
-  
+    #<strong>ExMemRegister</strong>  &#x21d2; <tt><span class='object_link'><a href="PipelineSim/PipelineRegister.html" title="PipelineSim::PipelineRegister (class)">PipelineRegister</a></span></tt>
 
-  
+
+
+
+
 </h3><div class="docstring">
   <div class="discussion">
-    
+
 <p>Returns (and sets) current content of the EX/MEM Register</p>
 
 
   </div>
 </div>
 <div class="tags">
-  
+
 <p class="tag_title">Returns:</p>
 <ul class="return">
-  
+
     <li>
-      
-      
+
+
         <span class='type'>(<tt><span class='object_link'><a href="PipelineSim/PipelineRegister.html" title="PipelineSim::PipelineRegister (class)">PipelineRegister</a></span></tt>)</span>
-      
-      
-      
+
+
+
         &mdash;
         <div class='inline'>
 <p>contents of pipeline register, including title, read, and write</p>
 </div>
-      
+
     </li>
-  
+
 </ul>
 
 </div><table class="source_code">
@@ -852,45 +852,45 @@ then write the given value to the register.</p>
   </tr>
 </table>
 </div>
-    
-      
+
+
       <span id="IdExRegister=-instance_method"></span>
       <div class="method_details ">
   <h3 class="signature " id="IdExRegister-instance_method">
-  
-    #<strong>IdExRegister</strong>  &#x21d2; <tt><span class='object_link'><a href="PipelineSim/PipelineRegister.html" title="PipelineSim::PipelineRegister (class)">PipelineRegister</a></span></tt> 
-  
 
-  
+    #<strong>IdExRegister</strong>  &#x21d2; <tt><span class='object_link'><a href="PipelineSim/PipelineRegister.html" title="PipelineSim::PipelineRegister (class)">PipelineRegister</a></span></tt>
 
-  
+
+
+
+
 </h3><div class="docstring">
   <div class="discussion">
-    
+
 <p>Returns (and sets) current content of the ID/EX Register</p>
 
 
   </div>
 </div>
 <div class="tags">
-  
+
 <p class="tag_title">Returns:</p>
 <ul class="return">
-  
+
     <li>
-      
-      
+
+
         <span class='type'>(<tt><span class='object_link'><a href="PipelineSim/PipelineRegister.html" title="PipelineSim::PipelineRegister (class)">PipelineRegister</a></span></tt>)</span>
-      
-      
-      
+
+
+
         &mdash;
         <div class='inline'>
 <p>contents of pipeline register, including title, read, and write</p>
 </div>
-      
+
     </li>
-  
+
 </ul>
 
 </div><table class="source_code">
@@ -913,45 +913,45 @@ then write the given value to the register.</p>
   </tr>
 </table>
 </div>
-    
-      
+
+
       <span id="IfIdRegister=-instance_method"></span>
       <div class="method_details ">
   <h3 class="signature " id="IfIdRegister-instance_method">
-  
-    #<strong>IfIdRegister</strong>  &#x21d2; <tt><span class='object_link'><a href="PipelineSim/PipelineRegister.html" title="PipelineSim::PipelineRegister (class)">PipelineRegister</a></span></tt> 
-  
 
-  
+    #<strong>IfIdRegister</strong>  &#x21d2; <tt><span class='object_link'><a href="PipelineSim/PipelineRegister.html" title="PipelineSim::PipelineRegister (class)">PipelineRegister</a></span></tt>
 
-  
+
+
+
+
 </h3><div class="docstring">
   <div class="discussion">
-    
+
 <p>Returns (and sets) current content of the IF/ID Register</p>
 
 
   </div>
 </div>
 <div class="tags">
-  
+
 <p class="tag_title">Returns:</p>
 <ul class="return">
-  
+
     <li>
-      
-      
+
+
         <span class='type'>(<tt><span class='object_link'><a href="PipelineSim/PipelineRegister.html" title="PipelineSim::PipelineRegister (class)">PipelineRegister</a></span></tt>)</span>
-      
-      
-      
+
+
+
         &mdash;
         <div class='inline'>
 <p>contents of pipeline register, including title, read, and write</p>
 </div>
-      
+
     </li>
-  
+
 </ul>
 
 </div><table class="source_code">
@@ -974,45 +974,45 @@ then write the given value to the register.</p>
   </tr>
 </table>
 </div>
-    
-      
+
+
       <span id="mainMem=-instance_method"></span>
       <div class="method_details ">
   <h3 class="signature " id="mainMem-instance_method">
-  
-    #<strong>mainMem</strong>  &#x21d2; <tt><span class='object_link'><a href="PipelineSim/MainMem.html" title="PipelineSim::MainMem (class)">MainMem</a></span></tt> 
-  
 
-  
+    #<strong>mainMem</strong>  &#x21d2; <tt><span class='object_link'><a href="PipelineSim/MainMem.html" title="PipelineSim::MainMem (class)">MainMem</a></span></tt>
 
-  
+
+
+
+
 </h3><div class="docstring">
   <div class="discussion">
-    
+
 <p>Returns (and sets) main memory</p>
 
 
   </div>
 </div>
 <div class="tags">
-  
+
 <p class="tag_title">Returns:</p>
 <ul class="return">
-  
+
     <li>
-      
-      
+
+
         <span class='type'>(<tt><span class='object_link'><a href="PipelineSim/MainMem.html" title="PipelineSim::MainMem (class)">MainMem</a></span></tt>)</span>
-      
-      
-      
+
+
+
         &mdash;
         <div class='inline'>
 <p>representation of current main memory</p>
 </div>
-      
+
     </li>
-  
+
 </ul>
 
 </div><table class="source_code">
@@ -1035,45 +1035,45 @@ then write the given value to the register.</p>
   </tr>
 </table>
 </div>
-    
-      
+
+
       <span id="MemWbRegister=-instance_method"></span>
       <div class="method_details ">
   <h3 class="signature " id="MemWbRegister-instance_method">
-  
-    #<strong>MemWbRegister</strong>  &#x21d2; <tt><span class='object_link'><a href="PipelineSim/PipelineRegister.html" title="PipelineSim::PipelineRegister (class)">PipelineRegister</a></span></tt> 
-  
 
-  
+    #<strong>MemWbRegister</strong>  &#x21d2; <tt><span class='object_link'><a href="PipelineSim/PipelineRegister.html" title="PipelineSim::PipelineRegister (class)">PipelineRegister</a></span></tt>
 
-  
+
+
+
+
 </h3><div class="docstring">
   <div class="discussion">
-    
+
 <p>Returns (and sets) current content of the MEM/WB Register</p>
 
 
   </div>
 </div>
 <div class="tags">
-  
+
 <p class="tag_title">Returns:</p>
 <ul class="return">
-  
+
     <li>
-      
-      
+
+
         <span class='type'>(<tt><span class='object_link'><a href="PipelineSim/PipelineRegister.html" title="PipelineSim::PipelineRegister (class)">PipelineRegister</a></span></tt>)</span>
-      
-      
-      
+
+
+
         &mdash;
         <div class='inline'>
 <p>contents of pipeline register, including title, read, and write</p>
 </div>
-      
+
     </li>
-  
+
 </ul>
 
 </div><table class="source_code">
@@ -1096,45 +1096,45 @@ then write the given value to the register.</p>
   </tr>
 </table>
 </div>
-    
-      
+
+
       <span id="regs=-instance_method"></span>
       <div class="method_details ">
   <h3 class="signature " id="regs-instance_method">
-  
-    #<strong>regs</strong>  &#x21d2; <tt><span class='object_link'><a href="PipelineSim/Regs.html" title="PipelineSim::Regs (class)">Regs</a></span></tt> 
-  
 
-  
+    #<strong>regs</strong>  &#x21d2; <tt><span class='object_link'><a href="PipelineSim/Regs.html" title="PipelineSim::Regs (class)">Regs</a></span></tt>
 
-  
+
+
+
+
 </h3><div class="docstring">
   <div class="discussion">
-    
+
 <p>Returns (and sets) registers</p>
 
 
   </div>
 </div>
 <div class="tags">
-  
+
 <p class="tag_title">Returns:</p>
 <ul class="return">
-  
+
     <li>
-      
-      
+
+
         <span class='type'>(<tt><span class='object_link'><a href="PipelineSim/Regs.html" title="PipelineSim::Regs (class)">Regs</a></span></tt>)</span>
-      
-      
-      
+
+
+
         &mdash;
         <div class='inline'>
 <p>representation of current registers</p>
 </div>
-      
+
     </li>
-  
+
 </ul>
 
 </div><table class="source_code">
@@ -1157,45 +1157,45 @@ then write the given value to the register.</p>
   </tr>
 </table>
 </div>
-    
-      
+
+
       <span id=""></span>
       <div class="method_details ">
   <h3 class="signature " id="starting_address-instance_method">
-  
+
     #<strong>starting_address</strong>  &#x21d2; <tt>String</tt>  <span class="extras">(readonly)</span>
-  
 
-  
 
-  
+
+
+
 </h3><div class="docstring">
   <div class="discussion">
-    
+
 <p>Returns starting_address</p>
 
 
   </div>
 </div>
 <div class="tags">
-  
+
 <p class="tag_title">Returns:</p>
 <ul class="return">
-  
+
     <li>
-      
-      
+
+
         <span class='type'>(<tt>String</tt>)</span>
-      
-      
-      
+
+
+
         &mdash;
         <div class='inline'>
 <p>starting address in hex</p>
 </div>
-      
+
     </li>
-  
+
 </ul>
 
 </div><table class="source_code">
@@ -1218,26 +1218,26 @@ then write the given value to the register.</p>
   </tr>
 </table>
 </div>
-    
+
   </div>
 
 
   <div id="instance_method_details" class="method_details_list">
     <h2>Instance Method Details</h2>
 
-    
+
       <div class="method_details first">
   <h3 class="signature first" id="copyWriteToRead-instance_method">
-  
-    #<strong>copyWriteToRead</strong>  &#x21d2; <tt>void</tt> 
-  
 
-  
+    #<strong>copyWriteToRead</strong>  &#x21d2; <tt>void</tt>
 
-  
+
+
+
+
 </h3><div class="docstring">
   <div class="discussion">
-    
+
   <div class="note notetag">
     <strong>Note:</strong>
     <div class='inline'>
@@ -1254,7 +1254,7 @@ register.</p>
   </div>
 </div>
 <div class="tags">
-  
+
 
 </div><table class="source_code">
   <tr>
@@ -1282,16 +1282,16 @@ register.</p>
   </tr>
 </table>
 </div>
-    
+
       <div class="method_details ">
   <h3 class="signature " id="exStage-instance_method">
-  
-    #<strong>exStage</strong>  &#x21d2; <tt>void</tt> 
-  
 
-  
+    #<strong>exStage</strong>  &#x21d2; <tt>void</tt>
 
-  
+
+
+
+
 </h3><div class="docstring">
   <div class="discussion">
     <p class="note returns_void">This method returns an undefined value.</p>
@@ -1302,7 +1302,7 @@ Register and writes the results to the write side of the ID/EX Register.</p>
   </div>
 </div>
 <div class="tags">
-  
+
 
 </div><table class="source_code">
   <tr>
@@ -1422,19 +1422,19 @@ Register and writes the results to the write side of the ID/EX Register.</p>
   </tr>
 </table>
 </div>
-    
+
       <div class="method_details ">
   <h3 class="signature " id="idStage-instance_method">
-  
-    #<strong>idStage</strong>  &#x21d2; <tt>void</tt> 
-  
 
-  
+    #<strong>idStage</strong>  &#x21d2; <tt>void</tt>
 
-  
+
+
+
+
 </h3><div class="docstring">
   <div class="discussion">
-    
+
   <div class="note notetag">
     <strong>Note:</strong>
     <div class='inline'>
@@ -1452,7 +1452,7 @@ ID/EX Register.</p>
   </div>
 </div>
 <div class="tags">
-  
+
 
 </div><table class="source_code">
   <tr>
@@ -1516,19 +1516,19 @@ ID/EX Register.</p>
   </tr>
 </table>
 </div>
-    
+
       <div class="method_details ">
   <h3 class="signature " id="ifStage-instance_method">
-  
-    #<strong>ifStage</strong>(instruction)  &#x21d2; <tt>void</tt> 
-  
 
-  
+    #<strong>ifStage</strong>(instruction)  &#x21d2; <tt>void</tt>
 
-  
+
+
+
+
 </h3><div class="docstring">
   <div class="discussion">
-    
+
   <div class="note notetag">
     <strong>Note:</strong>
     <div class='inline'>
@@ -1547,23 +1547,23 @@ write side of the IF/ID Register</p>
 <div class="tags">
   <p class="tag_title">Parameters:</p>
 <ul class="param">
-  
+
     <li>
-      
+
         <span class='name'>instruction</span>
-      
-      
+
+
         <span class='type'>(<tt>String</tt>)</span>
-      
-      
-      
+
+
+
         &mdash;
         <div class='inline'>
 <p>a MIPS instruction in hex</p>
 </div>
-      
+
     </li>
-  
+
 </ul>
 
 
@@ -1597,16 +1597,16 @@ write side of the IF/ID Register</p>
   </tr>
 </table>
 </div>
-    
+
       <div class="method_details ">
   <h3 class="signature " id="memStage-instance_method">
-  
-    #<strong>memStage</strong>  &#x21d2; <tt>void</tt> 
-  
 
-  
+    #<strong>memStage</strong>  &#x21d2; <tt>void</tt>
 
-  
+
+
+
+
 </h3><div class="docstring">
   <div class="discussion">
     <p class="note returns_void">This method returns an undefined value.</p>
@@ -1618,7 +1618,7 @@ register. If it is a store, then we store the result in main memory.</p>
   </div>
 </div>
 <div class="tags">
-  
+
 
 </div><table class="source_code">
   <tr>
@@ -1682,16 +1682,16 @@ register. If it is a store, then we store the result in main memory.</p>
   </tr>
 </table>
 </div>
-    
+
       <div class="method_details ">
   <h3 class="signature " id="printOutEverything-instance_method">
-  
-    #<strong>printOutEverything</strong>  &#x21d2; <tt>void</tt> 
-  
 
-  
+    #<strong>printOutEverything</strong>  &#x21d2; <tt>void</tt>
 
-  
+
+
+
+
 </h3><div class="docstring">
   <div class="discussion">
     <p class="note returns_void">This method returns an undefined value.</p>
@@ -1702,7 +1702,7 @@ registers.</p>
   </div>
 </div>
 <div class="tags">
-  
+
 
 </div><table class="source_code">
   <tr>
@@ -1782,19 +1782,19 @@ registers.</p>
   </tr>
 </table>
 </div>
-    
+
       <div class="method_details ">
   <h3 class="signature " id="runthrough-instance_method">
-  
-    #<strong>runthrough</strong>(instructions)  &#x21d2; <tt>Object</tt> 
-  
 
-  
+    #<strong>runthrough</strong>(instructions)  &#x21d2; <tt>Object</tt>
 
-  
+
+
+
+
 </h3><div class="docstring">
   <div class="discussion">
-    
+
 <p>MEM/WB Register Read</p>
 
 <pre class="code ruby"><code class="ruby"><span class='op'>-</span><span class='op'>-</span><span class='op'>-</span><span class='op'>-</span><span class='op'>-</span><span class='op'>-</span><span class='op'>-</span><span class='op'>-</span><span class='op'>-</span><span class='op'>-</span><span class='op'>-</span><span class='op'>-</span><span class='op'>-</span><span class='op'>-</span><span class='op'>-</span><span class='op'>-</span><span class='op'>-</span><span class='op'>-</span><span class='op'>-</span><span class='op'>-</span>
@@ -1805,7 +1805,7 @@ registers.</p>
   </div>
 </div>
 <div class="tags">
-  
+
 
 </div><table class="source_code">
   <tr>
@@ -1847,16 +1847,16 @@ registers.</p>
   </tr>
 </table>
 </div>
-    
+
       <div class="method_details ">
   <h3 class="signature " id="wbStage-instance_method">
-  
-    #<strong>wbStage</strong>  &#x21d2; <tt>void</tt> 
-  
 
-  
+    #<strong>wbStage</strong>  &#x21d2; <tt>void</tt>
 
-  
+
+
+
+
 </h3><div class="docstring">
   <div class="discussion">
     <p class="note returns_void">This method returns an undefined value.</p>
@@ -1867,24 +1867,24 @@ then write the given value to the register.</p>
   </div>
 </div>
 <div class="tags">
-  
+
 <p class="tag_title">Raises:</p>
 <ul class="raise">
-  
+
     <li>
-      
-      
+
+
         <span class='type'>(<tt>ArgumentError</tt>)</span>
-      
-      
-      
+
+
+
         &mdash;
         <div class='inline'>
 <p>expected 1 or 0 for memToReg</p>
 </div>
-      
+
     </li>
-  
+
 </ul>
 
 </div><table class="source_code">
@@ -1929,7 +1929,7 @@ then write the given value to the register.</p>
   </tr>
 </table>
 </div>
-    
+
   </div>
 
 </div>
