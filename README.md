@@ -5,6 +5,8 @@ While learning more about computer architecture, I wrote some Ruby scripts:
 * Cache Simulation - a program that takes an array or instructions, addresses, and data and updates a simulated cache. Could be altered to take user input.
 * Pipeline Simulation - a program that takes an array of instructions and passes them through each step of a simulated pipeline, updating the registers on each.
 
+View full docs at: https://jmkoni.github.io/computer-architecture-with-ruby/
+
 ***
 
 ### MIPS Disassembler
