@@ -3,6 +3,7 @@ While learning more about computer architecture, I wrote some Ruby scripts:
 
 * MIPS Disassembler - a program that takes an array of hex or binary and translates it into MIPS instructions
 * Cache Simulation - a program that takes an array or instructions, addresses, and data and updates a simulated cache. Could be altered to take user input.
+* Pipeline Simulation - a program that takes an array of instructions and passes them through each step of a simulated pipeline, updating the registers on each.
 
 ***
 
@@ -104,3 +105,117 @@ cache.perform_actions(["R", "4C3", "D", "W", "14C", "99"])
     14C
     What data would you like to write at that address?
     99
+
+***
+
+### Pipeline Simulation
+This class creates a simulation of a pipeline.
+
+####Initialization:####
+```ruby
+simulation = PipelineSim.new(starting_address)
+simulation.runthrough(instructions)
+```
+
+####Definition of parameters:####
+* starting_address: starting address of the first instruction (in hex)
+* instructions: array of mips instructions, in hex
+
+####Example####
+```ruby
+instructions = ["0x00a63820",
+                "0x8d0f0004",
+                "0xad09fffc",
+                "0x00625022",
+                "0x00000000",
+                "0x00000000",
+                "0x00000000",
+                "0x00000000"]
+simulation = PipelineSim.new("0x70000")
+simulation.runthrough(instructions)
+```
+
+####Output####
+    -----------------
+    | Clock Cycle 1 |
+    -----------------
+    Regs: 0, 101, 102, 103, 104, 105, 106, 107, 108, 109, 10a, 10b, 10c, 10d, 10e, 10f, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 11a, 11b, 11c, 11d, 11e, 11f, 120
+
+
+    IF/ID Register Write
+    --------------------
+    instruction = 0xa1020000  incrPC = 70004
+
+    IF/ID Register Read
+    --------------------
+    instruction = 0x00000000
+
+
+    ID/EX Register Write
+    --------------------
+    control = 000000000
+
+    ID/EX Register Read
+    --------------------
+    control = 000000000
+
+
+    EX/MEM Register Write
+    --------------------
+    control = 000000000
+
+    EX/MEM Register Read
+    --------------------
+    control = 000000000
+
+
+    MEM/WB Register Write
+    --------------------
+    control = 000000000
+
+    MEM/WB Register Read
+    --------------------
+    control = 000000000
+
+
+    -----------------
+    | Clock Cycle 2 |
+    -----------------
+    Regs: 0, 101, 102, 103, 104, 105, 106, 107, 108, 109, 10a, 10b, 10c, 10d, 10e, 10f, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 11a, 11b, 11c, 11d, 11e, 11f, 120
+
+
+    IF/ID Register Write
+    --------------------
+    instruction = 0x810AFFFC  incrPC = 70008
+
+    IF/ID Register Read
+    --------------------
+    instruction = 0xa1020000  incrPC = 70004
+
+
+    ID/EX Register Write
+    --------------------
+    Control: regWrite = 0, regDest = X, memToReg = X, memRead = 0, memWrite = 1, aLUSrc = 1, branch = 0, aLUOp = 0,
+    sEOffset = 0  function = X  writeReg_15_11 = 0  writeReg_20_16 = 2  readReg1Value = 108  readReg2Value = 102  incrPC = 70004
+
+    ID/EX Register Read
+    --------------------
+    control = 000000000
+
+
+    EX/MEM Register Write
+    --------------------
+    control = 000000000
+
+    EX/MEM Register Read
+    --------------------
+    control = 000000000
+
+
+    MEM/WB Register Write
+    --------------------
+    control = 000000000
+
+    MEM/WB Register Read
+    --------------------
+    control = 000000000

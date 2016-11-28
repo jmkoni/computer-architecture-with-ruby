@@ -60,8 +60,8 @@ class CacheSim
   #   cache = CacheSim::Cache.new(size)
   #
   # MainMemory is initialized here and, while the contents can be changed,
-  # @main_memory itself cannot. Ex. I cannot create a brand new instance of
-  # @main_memory once the cache is initialized
+  # main_memory itself cannot. Ex. I cannot create a brand new instance of
+  # main_memory once the cache is initialized
   class Cache
     # Returns size of cache
     # @return [Integer] number of slots in cache (and length of each slot array)

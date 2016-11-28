@@ -1,0 +1,1945 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>
+  Class: PipelineSim
+  
+    &mdash; Documentation by YARD 0.9.5
+  
+</title>
+
+  <link rel="stylesheet" href="css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="css/common.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  pathId = "PipelineSim";
+  relpath = '';
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div class="nav_wrap">
+      <iframe id="nav" src="class_list.html"></iframe>
+      <div id="resizer"></div>
+    </div>
+
+    <div id="main" tabindex="-1">
+      <div id="header">
+        <div id="menu">
+  
+    <a href="_index.html">Index (P)</a> &raquo;
+    
+    
+    <span class="title">PipelineSim</span>
+  
+</div>
+
+        <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="class_list.html">
+
+        <svg width="24" height="24">
+          <rect x="0" y="4" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="12" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="20" width="24" height="4" rx="1" ry="1"></rect>
+        </svg>
+    </a>
+  
+</div>
+        <div class="clear"></div>
+      </div>
+
+      <iframe id="search_frame" src="class_list.html"></iframe>
+
+      <div id="content"><h1>Class: PipelineSim
+  
+  
+  
+</h1>
+<div class="box_info">
+  
+  <dl>
+    <dt>Inherits:</dt>
+    <dd>
+      <span class="inheritName">Object</span>
+      
+        <ul class="fullTree">
+          <li>Object</li>
+          
+            <li class="next">PipelineSim</li>
+          
+        </ul>
+        <a href="#" class="inheritanceTree">show all</a>
+      
+    </dd>
+  </dl>
+  
+
+  
+  
+  
+  
+  
+
+  
+
+  
+  <dl>
+    <dt>Defined in:</dt>
+    <dd>pipeline_simulation.rb</dd>
+  </dl>
+  
+</div>
+
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    
+<p>This class represents a simulation of a computer pipeline. Initialization:</p>
+
+<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_simulation'>simulation</span> <span class='op'>=</span> <span class='const'>PipelineSim</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_starting_address'>starting_address</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_simulation'>simulation</span><span class='period'>.</span><span class='id identifier rubyid_runthrough'>runthrough</span><span class='lparen'>(</span><span class='id identifier rubyid_instructions'>instructions</span><span class='rparen'>)</span>
+</code></pre>
+
+<p>Definition of parameters:</p>
+
+<pre class="code ruby"><code class="ruby">starting_address: starting address of the first instruction (in hex)
+instructions: array of mips instructions, in hex</code></pre>
+
+<p>Example:</p>
+
+<pre class="code ruby"><code class="ruby">&gt; instructions = [&quot;0x00a63820&quot;,
+                  &quot;0x8d0f0004&quot;,
+                  &quot;0xad09fffc&quot;,
+                  &quot;0x00625022&quot;,
+                  &quot;0x00000000&quot;,
+                  &quot;0x00000000&quot;,
+                  &quot;0x00000000&quot;,
+                  &quot;0x00000000&quot;]
+&gt; simulation = PipelineSim.new(&quot;0x70000&quot;)
+&gt; simulation.runthrough(instructions)</code></pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Author:</p>
+<ul class="author">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>Jennifer Konikowski &lt;jmkoni@icloud.com&gt;</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><h2>Defined Under Namespace</h2>
+<p class="children">
+  
+    
+  
+    
+      <strong class="classes">Classes:</strong> <span class='object_link'><a href="PipelineSim/MainMem.html" title="PipelineSim::MainMem (class)">MainMem</a></span>, <span class='object_link'><a href="PipelineSim/PipelineRegister.html" title="PipelineSim::PipelineRegister (class)">PipelineRegister</a></span>, <span class='object_link'><a href="PipelineSim/Regs.html" title="PipelineSim::Regs (class)">Regs</a></span>
+    
+  
+</p>
+
+
+
+
+  <h2>Instance Attribute Summary <small><a href="#" class="summary_toggle">collapse</a></small></h2>
+  <ul class="summary">
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#cycle_num-instance_method" title="#cycle_num (instance method)">#<strong>cycle_num</strong>  &#x21d2; Integer </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns (and sets) cycle number.</p>
+</div></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#ExMemRegister-instance_method" title="#ExMemRegister (instance method)">#<strong>ExMemRegister</strong>  &#x21d2; PipelineRegister </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns (and sets) current content of the EX/MEM Register.</p>
+</div></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#IdExRegister-instance_method" title="#IdExRegister (instance method)">#<strong>IdExRegister</strong>  &#x21d2; PipelineRegister </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns (and sets) current content of the ID/EX Register.</p>
+</div></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#IfIdRegister-instance_method" title="#IfIdRegister (instance method)">#<strong>IfIdRegister</strong>  &#x21d2; PipelineRegister </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns (and sets) current content of the IF/ID Register.</p>
+</div></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#mainMem-instance_method" title="#mainMem (instance method)">#<strong>mainMem</strong>  &#x21d2; MainMem </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns (and sets) main memory.</p>
+</div></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#MemWbRegister-instance_method" title="#MemWbRegister (instance method)">#<strong>MemWbRegister</strong>  &#x21d2; PipelineRegister </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns (and sets) current content of the MEM/WB Register.</p>
+</div></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#regs-instance_method" title="#regs (instance method)">#<strong>regs</strong>  &#x21d2; Regs </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns (and sets) registers.</p>
+</div></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#starting_address-instance_method" title="#starting_address (instance method)">#<strong>starting_address</strong>  &#x21d2; String </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+      <span class="note title readonly">readonly</span>
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns starting_address.</p>
+</div></span>
+  
+</li>
+
+    
+  </ul>
+
+
+
+
+  
+    <h2>
+      Instance Method Summary
+      <small><a href="#" class="summary_toggle">collapse</a></small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#copyWriteToRead-instance_method" title="#copyWriteToRead (instance method)">#<strong>copyWriteToRead</strong>  &#x21d2; void </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Copies the write side of each PipelineRegister to the read side of that
+register.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#exStage-instance_method" title="#exStage (instance method)">#<strong>exStage</strong>  &#x21d2; void </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>exStage: Execute Performs the instruction from the read side of the ID/EX
+Register and writes the results to the write side of the ID/EX Register.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#idStage-instance_method" title="#idStage (instance method)">#<strong>idStage</strong>  &#x21d2; void </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>idStage: Instruction Decode Reads the instruction from the read side of the
+IF/ID Register, decodes it, and writes the results to the write side of the
+ID/EX Register.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#ifStage-instance_method" title="#ifStage (instance method)">#<strong>ifStage</strong>(instruction)  &#x21d2; void </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>ifStage: Instruction Fetch Fetch the next instruction and write it to the
+write side of the IF/ID Register.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#initialize-instance_method" title="#initialize (instance method)">#<strong>initialize</strong>(starting_address)  &#x21d2; PipelineSim </a>
+    
+
+    
+  </span>
+  
+  
+    <span class="note title constructor">constructor</span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Initializes new PipelineSim object.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#memStage-instance_method" title="#memStage (instance method)">#<strong>memStage</strong>  &#x21d2; void </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>memStage: Memory Access If the instruction is a load, then we get the data
+from the address calculated in the Execute stage and store it in the
+register.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#printOutEverything-instance_method" title="#printOutEverything (instance method)">#<strong>printOutEverything</strong>  &#x21d2; void </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Prints out current clock cycle, registers, and all contents of the pipeline
+registers.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#runthrough-instance_method" title="#runthrough (instance method)">#<strong>runthrough</strong>(instructions)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>MEM/WB Register Read     ——————–     control = 000000000.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#wbStage-instance_method" title="#wbStage (instance method)">#<strong>wbStage</strong>  &#x21d2; void </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>wbStage: Register Write Back If writing to registers (add, sub, or load),
+then write the given value to the register.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+<div id="constructor_details" class="method_details_list">
+  <h2>Constructor Details</h2>
+  
+    <div class="method_details first">
+  <h3 class="signature first" id="initialize-instance_method">
+  
+    #<strong>initialize</strong>(starting_address)  &#x21d2; <tt><span class='object_link'><a href="" title="PipelineSim (class)">PipelineSim</a></span></tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+  <div class="note notetag">
+    <strong>Note:</strong>
+    <div class='inline'>
+<p>With this simulation, there are 32 registers and a 1K main memory</p>
+</div>
+  </div>
+
+
+<p>Initializes new PipelineSim object</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+        <p class="example_title"><div class='inline'>
+<p>Create a new pipeline simulation</p>
+</div></p>
+      
+      <pre class="example code"><code><span class='id identifier rubyid_simulation'>simulation</span> <span class='op'>=</span> <span class='const'>PipelineSim</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>0x70000</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span></code></pre>
+    
+  </div>
+<p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>starting_address</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>starting address in hex</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'pipeline_simulation.rb', line 52</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_starting_address'>starting_address</span><span class='rparen'>)</span>
+  <span class='ivar'>@mainMem</span> <span class='op'>=</span> <span class='const'>MainMem</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>7FF</span><span class='tstring_end'>&#39;</span></span><span class='period'>.</span><span class='id identifier rubyid_to_i'>to_i</span><span class='lparen'>(</span><span class='int'>16</span><span class='rparen'>)</span><span class='rparen'>)</span>
+  <span class='ivar'>@regs</span> <span class='op'>=</span> <span class='const'>Regs</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='int'>32</span><span class='rparen'>)</span>
+  <span class='ivar'>@cycle_num</span> <span class='op'>=</span> <span class='int'>0</span>
+  <span class='ivar'>@starting_address</span> <span class='op'>=</span> <span class='id identifier rubyid_starting_address'>starting_address</span>
+  <span class='ivar'>@IfIdRegister</span> <span class='op'>=</span> <span class='const'>PipelineRegister</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>IF/ID Register</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='lbrace'>{</span><span class='label'>instruction:</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>0x00000000</span><span class='tstring_end'>&quot;</span></span><span class='rbrace'>}</span><span class='rparen'>)</span>
+  <span class='ivar'>@IdExRegister</span> <span class='op'>=</span> <span class='const'>PipelineRegister</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>ID/EX Register</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='lbrace'>{</span><span class='label'>control:</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>000000000</span><span class='tstring_end'>&quot;</span></span><span class='rbrace'>}</span><span class='rparen'>)</span>
+  <span class='ivar'>@ExMemRegister</span> <span class='op'>=</span> <span class='const'>PipelineRegister</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>EX/MEM Register</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='lbrace'>{</span><span class='label'>control:</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>000000000</span><span class='tstring_end'>&quot;</span></span><span class='rbrace'>}</span><span class='rparen'>)</span>
+  <span class='ivar'>@MemWbRegister</span> <span class='op'>=</span> <span class='const'>PipelineRegister</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>MEM/WB Register</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='lbrace'>{</span><span class='label'>control:</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>000000000</span><span class='tstring_end'>&quot;</span></span><span class='rbrace'>}</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+  
+</div>
+
+  <div id="instance_attr_details" class="attr_details">
+    <h2>Instance Attribute Details</h2>
+    
+      
+      <span id="cycle_num=-instance_method"></span>
+      <div class="method_details first">
+  <h3 class="signature first" id="cycle_num-instance_method">
+  
+    #<strong>cycle_num</strong>  &#x21d2; <tt>Integer</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns (and sets) cycle number</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Integer</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>current cycle number</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+45
+46
+47</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'pipeline_simulation.rb', line 45</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_cycle_num'>cycle_num</span>
+  <span class='ivar'>@cycle_num</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id="ExMemRegister=-instance_method"></span>
+      <div class="method_details ">
+  <h3 class="signature " id="ExMemRegister-instance_method">
+  
+    #<strong>ExMemRegister</strong>  &#x21d2; <tt><span class='object_link'><a href="PipelineSim/PipelineRegister.html" title="PipelineSim::PipelineRegister (class)">PipelineRegister</a></span></tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns (and sets) current content of the EX/MEM Register</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="PipelineSim/PipelineRegister.html" title="PipelineSim::PipelineRegister (class)">PipelineRegister</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>contents of pipeline register, including title, read, and write</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+30
+31
+32</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'pipeline_simulation.rb', line 30</span>
+
+<span class='kw'>def</span> <span class='const'>ExMemRegister</span>
+  <span class='ivar'>@ExMemRegister</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id="IdExRegister=-instance_method"></span>
+      <div class="method_details ">
+  <h3 class="signature " id="IdExRegister-instance_method">
+  
+    #<strong>IdExRegister</strong>  &#x21d2; <tt><span class='object_link'><a href="PipelineSim/PipelineRegister.html" title="PipelineSim::PipelineRegister (class)">PipelineRegister</a></span></tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns (and sets) current content of the ID/EX Register</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="PipelineSim/PipelineRegister.html" title="PipelineSim::PipelineRegister (class)">PipelineRegister</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>contents of pipeline register, including title, read, and write</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+27
+28
+29</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'pipeline_simulation.rb', line 27</span>
+
+<span class='kw'>def</span> <span class='const'>IdExRegister</span>
+  <span class='ivar'>@IdExRegister</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id="IfIdRegister=-instance_method"></span>
+      <div class="method_details ">
+  <h3 class="signature " id="IfIdRegister-instance_method">
+  
+    #<strong>IfIdRegister</strong>  &#x21d2; <tt><span class='object_link'><a href="PipelineSim/PipelineRegister.html" title="PipelineSim::PipelineRegister (class)">PipelineRegister</a></span></tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns (and sets) current content of the IF/ID Register</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="PipelineSim/PipelineRegister.html" title="PipelineSim::PipelineRegister (class)">PipelineRegister</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>contents of pipeline register, including title, read, and write</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+24
+25
+26</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'pipeline_simulation.rb', line 24</span>
+
+<span class='kw'>def</span> <span class='const'>IfIdRegister</span>
+  <span class='ivar'>@IfIdRegister</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id="mainMem=-instance_method"></span>
+      <div class="method_details ">
+  <h3 class="signature " id="mainMem-instance_method">
+  
+    #<strong>mainMem</strong>  &#x21d2; <tt><span class='object_link'><a href="PipelineSim/MainMem.html" title="PipelineSim::MainMem (class)">MainMem</a></span></tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns (and sets) main memory</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="PipelineSim/MainMem.html" title="PipelineSim::MainMem (class)">MainMem</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>representation of current main memory</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+36
+37
+38</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'pipeline_simulation.rb', line 36</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_mainMem'>mainMem</span>
+  <span class='ivar'>@mainMem</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id="MemWbRegister=-instance_method"></span>
+      <div class="method_details ">
+  <h3 class="signature " id="MemWbRegister-instance_method">
+  
+    #<strong>MemWbRegister</strong>  &#x21d2; <tt><span class='object_link'><a href="PipelineSim/PipelineRegister.html" title="PipelineSim::PipelineRegister (class)">PipelineRegister</a></span></tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns (and sets) current content of the MEM/WB Register</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="PipelineSim/PipelineRegister.html" title="PipelineSim::PipelineRegister (class)">PipelineRegister</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>contents of pipeline register, including title, read, and write</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+33
+34
+35</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'pipeline_simulation.rb', line 33</span>
+
+<span class='kw'>def</span> <span class='const'>MemWbRegister</span>
+  <span class='ivar'>@MemWbRegister</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id="regs=-instance_method"></span>
+      <div class="method_details ">
+  <h3 class="signature " id="regs-instance_method">
+  
+    #<strong>regs</strong>  &#x21d2; <tt><span class='object_link'><a href="PipelineSim/Regs.html" title="PipelineSim::Regs (class)">Regs</a></span></tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns (and sets) registers</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="PipelineSim/Regs.html" title="PipelineSim::Regs (class)">Regs</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>representation of current registers</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+39
+40
+41</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'pipeline_simulation.rb', line 39</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_regs'>regs</span>
+  <span class='ivar'>@regs</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id=""></span>
+      <div class="method_details ">
+  <h3 class="signature " id="starting_address-instance_method">
+  
+    #<strong>starting_address</strong>  &#x21d2; <tt>String</tt>  <span class="extras">(readonly)</span>
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns starting_address</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>starting address in hex</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+42
+43
+44</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'pipeline_simulation.rb', line 42</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_starting_address'>starting_address</span>
+  <span class='ivar'>@starting_address</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="copyWriteToRead-instance_method">
+  
+    #<strong>copyWriteToRead</strong>  &#x21d2; <tt>void</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+  <div class="note notetag">
+    <strong>Note:</strong>
+    <div class='inline'>
+<p>So it doesn&#39;t use the exact same hash object, we use #clone to copy
+from write to read.</p>
+</div>
+  </div>
+
+<p class="note returns_void">This method returns an undefined value.</p>
+<p>Copies the write side of each PipelineRegister to the read side of that
+register.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+351
+352
+353
+354
+355
+356</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'pipeline_simulation.rb', line 351</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_copyWriteToRead'>copyWriteToRead</span>
+  <span class='lbracket'>[</span><span class='ivar'>@IfIdRegister</span><span class='comma'>,</span> <span class='ivar'>@IdExRegister</span><span class='comma'>,</span> <span class='ivar'>@ExMemRegister</span><span class='comma'>,</span> <span class='ivar'>@MemWbRegister</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_register'>register</span><span class='op'>|</span>
+    <span class='id identifier rubyid_register'>register</span><span class='period'>.</span><span class='id identifier rubyid_read'>read</span> <span class='op'>=</span> <span class='id identifier rubyid_register'>register</span><span class='period'>.</span><span class='id identifier rubyid_write'>write</span><span class='period'>.</span><span class='id identifier rubyid_clone'>clone</span>
+    <span class='id identifier rubyid_register'>register</span><span class='period'>.</span><span class='id identifier rubyid_read'>read</span><span class='lbracket'>[</span><span class='symbol'>:control</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id identifier rubyid_register'>register</span><span class='period'>.</span><span class='id identifier rubyid_write'>write</span><span class='lbracket'>[</span><span class='symbol'>:control</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_clone'>clone</span> <span class='kw'>if</span> <span class='id identifier rubyid_register'>register</span><span class='period'>.</span><span class='id identifier rubyid_write'>write</span><span class='lbracket'>[</span><span class='symbol'>:control</span><span class='rbracket'>]</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="exStage-instance_method">
+  
+    #<strong>exStage</strong>  &#x21d2; <tt>void</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p class="note returns_void">This method returns an undefined value.</p>
+<p>exStage: Execute Performs the instruction from the read side of the ID/EX
+Register and writes the results to the write side of the ID/EX Register.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261
+262
+263
+264</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'pipeline_simulation.rb', line 213</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_exStage'>exStage</span>
+  <span class='comment'># noop
+</span>  <span class='kw'>if</span> <span class='ivar'>@IdExRegister</span><span class='period'>.</span><span class='id identifier rubyid_read'>read</span><span class='lbracket'>[</span><span class='symbol'>:control</span><span class='rbracket'>]</span> <span class='op'>==</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>000000000</span><span class='tstring_end'>&quot;</span></span>
+    <span class='ivar'>@ExMemRegister</span><span class='period'>.</span><span class='id identifier rubyid_write'>write</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='label'>control:</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>000000000</span><span class='tstring_end'>&quot;</span></span> <span class='rbrace'>}</span>
+  <span class='kw'>else</span>
+    <span class='comment'># if this is the first one, set control to a hash
+</span>    <span class='kw'>if</span> <span class='ivar'>@ExMemRegister</span><span class='period'>.</span><span class='id identifier rubyid_write'>write</span><span class='lbracket'>[</span><span class='symbol'>:control</span><span class='rbracket'>]</span> <span class='op'>==</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>000000000</span><span class='tstring_end'>&quot;</span></span>
+      <span class='ivar'>@ExMemRegister</span><span class='period'>.</span><span class='id identifier rubyid_write'>write</span><span class='lbracket'>[</span><span class='symbol'>:control</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span>
+    <span class='kw'>end</span>
+    <span class='comment'># copy control variables that need to go to Ex/Mem to Ex/Mem write
+</span>    <span class='ivar'>@ExMemRegister</span><span class='period'>.</span><span class='id identifier rubyid_write'>write</span><span class='lbracket'>[</span><span class='symbol'>:control</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='symbol'>:memWrite</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='ivar'>@IdExRegister</span><span class='period'>.</span><span class='id identifier rubyid_read'>read</span><span class='lbracket'>[</span><span class='symbol'>:control</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='symbol'>:memWrite</span><span class='rbracket'>]</span>
+    <span class='ivar'>@ExMemRegister</span><span class='period'>.</span><span class='id identifier rubyid_write'>write</span><span class='lbracket'>[</span><span class='symbol'>:control</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='symbol'>:memRead</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='ivar'>@IdExRegister</span><span class='period'>.</span><span class='id identifier rubyid_read'>read</span><span class='lbracket'>[</span><span class='symbol'>:control</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='symbol'>:memRead</span><span class='rbracket'>]</span>
+    <span class='ivar'>@ExMemRegister</span><span class='period'>.</span><span class='id identifier rubyid_write'>write</span><span class='lbracket'>[</span><span class='symbol'>:control</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='symbol'>:memToReg</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='ivar'>@IdExRegister</span><span class='period'>.</span><span class='id identifier rubyid_read'>read</span><span class='lbracket'>[</span><span class='symbol'>:control</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='symbol'>:memToReg</span><span class='rbracket'>]</span>
+    <span class='ivar'>@ExMemRegister</span><span class='period'>.</span><span class='id identifier rubyid_write'>write</span><span class='lbracket'>[</span><span class='symbol'>:control</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='symbol'>:regWrite</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='ivar'>@IdExRegister</span><span class='period'>.</span><span class='id identifier rubyid_read'>read</span><span class='lbracket'>[</span><span class='symbol'>:control</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='symbol'>:regWrite</span><span class='rbracket'>]</span>
+    <span class='ivar'>@ExMemRegister</span><span class='period'>.</span><span class='id identifier rubyid_write'>write</span><span class='lbracket'>[</span><span class='symbol'>:control</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='symbol'>:branch</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='ivar'>@IdExRegister</span><span class='period'>.</span><span class='id identifier rubyid_read'>read</span><span class='lbracket'>[</span><span class='symbol'>:control</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='symbol'>:branch</span><span class='rbracket'>]</span>
+    <span class='ivar'>@ExMemRegister</span><span class='period'>.</span><span class='id identifier rubyid_write'>write</span><span class='lbracket'>[</span><span class='symbol'>:incrPC</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='ivar'>@IdExRegister</span><span class='period'>.</span><span class='id identifier rubyid_read'>read</span><span class='lbracket'>[</span><span class='symbol'>:incrPC</span><span class='rbracket'>]</span>
+    <span class='comment'># read in needed variables for later execution
+</span>    <span class='id identifier rubyid_aLUSrc'>aLUSrc</span> <span class='op'>=</span> <span class='ivar'>@IdExRegister</span><span class='period'>.</span><span class='id identifier rubyid_read'>read</span><span class='lbracket'>[</span><span class='symbol'>:control</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='symbol'>:aLUSrc</span><span class='rbracket'>]</span>
+    <span class='id identifier rubyid_aLUOp'>aLUOp</span> <span class='op'>=</span> <span class='ivar'>@IdExRegister</span><span class='period'>.</span><span class='id identifier rubyid_read'>read</span><span class='lbracket'>[</span><span class='symbol'>:control</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='symbol'>:aLUOp</span><span class='rbracket'>]</span>
+    <span class='id identifier rubyid_reg1'>reg1</span> <span class='op'>=</span> <span class='ivar'>@IdExRegister</span><span class='period'>.</span><span class='id identifier rubyid_read'>read</span><span class='lbracket'>[</span><span class='symbol'>:readReg1Value</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_to_i'>to_i</span><span class='lparen'>(</span><span class='int'>16</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_reg2'>reg2</span> <span class='op'>=</span> <span class='ivar'>@IdExRegister</span><span class='period'>.</span><span class='id identifier rubyid_read'>read</span><span class='lbracket'>[</span><span class='symbol'>:readReg2Value</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_to_i'>to_i</span><span class='lparen'>(</span><span class='int'>16</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_regDest'>regDest</span> <span class='op'>=</span> <span class='ivar'>@IdExRegister</span><span class='period'>.</span><span class='id identifier rubyid_read'>read</span><span class='lbracket'>[</span><span class='symbol'>:control</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='symbol'>:regDest</span><span class='rbracket'>]</span>
+
+    <span class='comment'># if the first register, use 20-16
+</span>    <span class='comment'># if the second, use 15-11
+</span>    <span class='comment'># otherwise, it shouldn&#39;t be writing to a register, so don&#39;t care
+</span>    <span class='kw'>if</span> <span class='id identifier rubyid_regDest'>regDest</span> <span class='op'>==</span> <span class='int'>0</span>
+      <span class='ivar'>@ExMemRegister</span><span class='period'>.</span><span class='id identifier rubyid_write'>write</span><span class='lbracket'>[</span><span class='symbol'>:writeRegNum</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='ivar'>@IdExRegister</span><span class='period'>.</span><span class='id identifier rubyid_read'>read</span><span class='lbracket'>[</span><span class='symbol'>:writeReg_20_16</span><span class='rbracket'>]</span>
+    <span class='kw'>elsif</span> <span class='id identifier rubyid_regDest'>regDest</span> <span class='op'>==</span> <span class='int'>1</span>
+      <span class='ivar'>@ExMemRegister</span><span class='period'>.</span><span class='id identifier rubyid_write'>write</span><span class='lbracket'>[</span><span class='symbol'>:writeRegNum</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='ivar'>@IdExRegister</span><span class='period'>.</span><span class='id identifier rubyid_read'>read</span><span class='lbracket'>[</span><span class='symbol'>:writeReg_15_11</span><span class='rbracket'>]</span>
+    <span class='kw'>else</span>
+      <span class='ivar'>@ExMemRegister</span><span class='period'>.</span><span class='id identifier rubyid_write'>write</span><span class='lbracket'>[</span><span class='symbol'>:writeRegNum</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>X</span><span class='tstring_end'>&quot;</span></span>
+    <span class='kw'>end</span>
+
+    <span class='comment'># calculate ALUResult
+</span>    <span class='kw'>if</span> <span class='ivar'>@IdExRegister</span><span class='period'>.</span><span class='id identifier rubyid_read'>read</span><span class='lbracket'>[</span><span class='symbol'>:function</span><span class='rbracket'>]</span> <span class='op'>==</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>22</span><span class='tstring_end'>&quot;</span></span>
+      <span class='comment'># sub
+</span>      <span class='id identifier rubyid_aLUResult'>aLUResult</span> <span class='op'>=</span> <span class='lparen'>(</span><span class='id identifier rubyid_reg1'>reg1</span> <span class='op'>-</span> <span class='id identifier rubyid_reg2'>reg2</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span><span class='lparen'>(</span><span class='int'>16</span><span class='rparen'>)</span>
+    <span class='kw'>elsif</span> <span class='ivar'>@IdExRegister</span><span class='period'>.</span><span class='id identifier rubyid_read'>read</span><span class='lbracket'>[</span><span class='symbol'>:function</span><span class='rbracket'>]</span> <span class='op'>==</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>20</span><span class='tstring_end'>&quot;</span></span>
+      <span class='comment'># add
+</span>      <span class='id identifier rubyid_aLUResult'>aLUResult</span> <span class='op'>=</span> <span class='lparen'>(</span><span class='id identifier rubyid_reg2'>reg2</span> <span class='op'>+</span> <span class='id identifier rubyid_reg1'>reg1</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span><span class='lparen'>(</span><span class='int'>16</span><span class='rparen'>)</span>
+    <span class='kw'>else</span>
+      <span class='comment'># lb &amp; sb
+</span>      <span class='id identifier rubyid_aLUResult'>aLUResult</span> <span class='op'>=</span> <span class='lparen'>(</span><span class='id identifier rubyid_reg1'>reg1</span> <span class='op'>+</span> <span class='id identifier rubyid_convert_to_signed_binary'>convert_to_signed_binary</span><span class='lparen'>(</span><span class='ivar'>@IdExRegister</span><span class='period'>.</span><span class='id identifier rubyid_read'>read</span><span class='lbracket'>[</span><span class='symbol'>:sEOffset</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_to_i'>to_i</span><span class='lparen'>(</span><span class='int'>16</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span><span class='lparen'>(</span><span class='int'>2</span><span class='rparen'>)</span><span class='rparen'>)</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span><span class='lparen'>(</span><span class='int'>16</span><span class='rparen'>)</span>
+    <span class='kw'>end</span>
+    <span class='comment'># this project is not handling branches
+</span>    <span class='ivar'>@ExMemRegister</span><span class='period'>.</span><span class='id identifier rubyid_write'>write</span><span class='lbracket'>[</span><span class='symbol'>:calcBTA</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>X</span><span class='tstring_end'>&quot;</span></span>
+    <span class='ivar'>@ExMemRegister</span><span class='period'>.</span><span class='id identifier rubyid_write'>write</span><span class='lbracket'>[</span><span class='symbol'>:zero</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>F</span><span class='tstring_end'>&quot;</span></span>
+    <span class='ivar'>@ExMemRegister</span><span class='period'>.</span><span class='id identifier rubyid_write'>write</span><span class='lbracket'>[</span><span class='symbol'>:aLUResult</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id identifier rubyid_aLUResult'>aLUResult</span>
+    <span class='ivar'>@ExMemRegister</span><span class='period'>.</span><span class='id identifier rubyid_write'>write</span><span class='lbracket'>[</span><span class='symbol'>:sWValue</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id identifier rubyid_reg2'>reg2</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span><span class='lparen'>(</span><span class='int'>16</span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="idStage-instance_method">
+  
+    #<strong>idStage</strong>  &#x21d2; <tt>void</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+  <div class="note notetag">
+    <strong>Note:</strong>
+    <div class='inline'>
+<p>Determines whether instruction is r-format or i-format and uses the
+relevant function to further decode instructions</p>
+</div>
+  </div>
+
+<p class="note returns_void">This method returns an undefined value.</p>
+<p>idStage: Instruction Decode Reads the instruction from the read side of the
+IF/ID Register, decodes it, and writes the results to the write side of the
+ID/EX Register.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'pipeline_simulation.rb', line 185</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_idStage'>idStage</span>
+  <span class='id identifier rubyid_instruction'>instruction</span> <span class='op'>=</span> <span class='ivar'>@IfIdRegister</span><span class='period'>.</span><span class='id identifier rubyid_read'>read</span><span class='lbracket'>[</span><span class='symbol'>:instruction</span><span class='rbracket'>]</span>
+  <span class='id identifier rubyid_address'>address</span> <span class='op'>=</span> <span class='ivar'>@IfIdRegister</span><span class='period'>.</span><span class='id identifier rubyid_read'>read</span><span class='lbracket'>[</span><span class='symbol'>:incrPC</span><span class='rbracket'>]</span>
+  <span class='kw'>if</span> <span class='id identifier rubyid_instruction'>instruction</span><span class='period'>.</span><span class='id identifier rubyid_to_i'>to_i</span><span class='lparen'>(</span><span class='int'>16</span><span class='rparen'>)</span> <span class='op'>==</span> <span class='int'>0</span>
+    <span class='comment'># this is a noop
+</span>    <span class='ivar'>@IdExRegister</span><span class='period'>.</span><span class='id identifier rubyid_write'>write</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='label'>control:</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>000000000</span><span class='tstring_end'>&quot;</span></span><span class='rbrace'>}</span>
+  <span class='kw'>else</span>
+    <span class='comment'># convert to binary
+</span>    <span class='id identifier rubyid_binary_instr'>binary_instr</span> <span class='op'>=</span> <span class='id identifier rubyid_sprintf'>sprintf</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>%b</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_instruction'>instruction</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_rjust'>rjust</span><span class='lparen'>(</span><span class='int'>32</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>0</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_first_six'>first_six</span> <span class='op'>=</span> <span class='id identifier rubyid_binary_instr'>binary_instr</span><span class='lbracket'>[</span><span class='op'>-</span><span class='int'>32</span><span class='op'>..</span><span class='op'>-</span><span class='int'>27</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_to_i'>to_i</span><span class='lparen'>(</span><span class='int'>2</span><span class='rparen'>)</span>
+    <span class='comment'># determine if r or i, then decode
+</span>    <span class='kw'>if</span> <span class='id identifier rubyid_first_six'>first_six</span> <span class='op'>==</span> <span class='int'>0</span>
+      <span class='id identifier rubyid_translate_r_format'>translate_r_format</span><span class='lparen'>(</span><span class='id identifier rubyid_binary_instr'>binary_instr</span><span class='rparen'>)</span>
+    <span class='kw'>else</span>
+      <span class='id identifier rubyid_translate_i_format'>translate_i_format</span><span class='lparen'>(</span><span class='id identifier rubyid_binary_instr'>binary_instr</span><span class='comma'>,</span> <span class='id identifier rubyid_address'>address</span><span class='rparen'>)</span>
+    <span class='kw'>end</span>
+    <span class='comment'># regardless of type, add write/read values and incrPC
+</span>    <span class='ivar'>@IdExRegister</span><span class='period'>.</span><span class='id identifier rubyid_write'>write</span><span class='lbracket'>[</span><span class='symbol'>:writeReg_15_11</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id identifier rubyid_binary_instr'>binary_instr</span><span class='lbracket'>[</span><span class='op'>-</span><span class='int'>16</span><span class='op'>..</span><span class='op'>-</span><span class='int'>12</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_to_i'>to_i</span><span class='lparen'>(</span><span class='int'>2</span><span class='rparen'>)</span>
+    <span class='ivar'>@IdExRegister</span><span class='period'>.</span><span class='id identifier rubyid_write'>write</span><span class='lbracket'>[</span><span class='symbol'>:writeReg_20_16</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id identifier rubyid_binary_instr'>binary_instr</span><span class='lbracket'>[</span><span class='op'>-</span><span class='int'>21</span><span class='op'>..</span><span class='op'>-</span><span class='int'>17</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_to_i'>to_i</span><span class='lparen'>(</span><span class='int'>2</span><span class='rparen'>)</span>
+    <span class='ivar'>@IdExRegister</span><span class='period'>.</span><span class='id identifier rubyid_write'>write</span><span class='lbracket'>[</span><span class='symbol'>:readReg1Value</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='ivar'>@regs</span><span class='period'>.</span><span class='id identifier rubyid_content'>content</span><span class='lbracket'>[</span><span class='id identifier rubyid_binary_instr'>binary_instr</span><span class='lbracket'>[</span><span class='op'>-</span><span class='int'>26</span><span class='op'>..</span><span class='op'>-</span><span class='int'>22</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_to_i'>to_i</span><span class='lparen'>(</span><span class='int'>2</span><span class='rparen'>)</span><span class='rbracket'>]</span>
+    <span class='ivar'>@IdExRegister</span><span class='period'>.</span><span class='id identifier rubyid_write'>write</span><span class='lbracket'>[</span><span class='symbol'>:readReg2Value</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='ivar'>@regs</span><span class='period'>.</span><span class='id identifier rubyid_content'>content</span><span class='lbracket'>[</span><span class='id identifier rubyid_binary_instr'>binary_instr</span><span class='lbracket'>[</span><span class='op'>-</span><span class='int'>21</span><span class='op'>..</span><span class='op'>-</span><span class='int'>17</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_to_i'>to_i</span><span class='lparen'>(</span><span class='int'>2</span><span class='rparen'>)</span><span class='rbracket'>]</span>
+    <span class='ivar'>@IdExRegister</span><span class='period'>.</span><span class='id identifier rubyid_write'>write</span><span class='lbracket'>[</span><span class='symbol'>:incrPC</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id identifier rubyid_address'>address</span> <span class='kw'>if</span> <span class='id identifier rubyid_address'>address</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="ifStage-instance_method">
+  
+    #<strong>ifStage</strong>(instruction)  &#x21d2; <tt>void</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+  <div class="note notetag">
+    <strong>Note:</strong>
+    <div class='inline'>
+<p>If the IF/ID Register already has an incrPC value, then increase it by 4.
+Otherwise, take the starting address</p>
+</div>
+  </div>
+
+<p class="note returns_void">This method returns an undefined value.</p>
+<p>ifStage: Instruction Fetch Fetch the next instruction and write it to the
+write side of the IF/ID Register</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>instruction</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>a MIPS instruction in hex</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+172
+173
+174
+175
+176
+177
+178
+179</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'pipeline_simulation.rb', line 172</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_ifStage'>ifStage</span><span class='lparen'>(</span><span class='id identifier rubyid_instruction'>instruction</span><span class='rparen'>)</span>
+  <span class='ivar'>@IfIdRegister</span><span class='period'>.</span><span class='id identifier rubyid_write'>write</span> <span class='op'>=</span> <span class='lbrace'>{</span> <span class='label'>instruction:</span> <span class='id identifier rubyid_instruction'>instruction</span> <span class='rbrace'>}</span>
+  <span class='kw'>if</span> <span class='ivar'>@IfIdRegister</span><span class='period'>.</span><span class='id identifier rubyid_read'>read</span><span class='lbracket'>[</span><span class='symbol'>:incrPC</span><span class='rbracket'>]</span>
+    <span class='ivar'>@IfIdRegister</span><span class='period'>.</span><span class='id identifier rubyid_write'>write</span><span class='lbracket'>[</span><span class='symbol'>:incrPC</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='lparen'>(</span><span class='ivar'>@IfIdRegister</span><span class='period'>.</span><span class='id identifier rubyid_read'>read</span><span class='lbracket'>[</span><span class='symbol'>:incrPC</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_to_i'>to_i</span><span class='lparen'>(</span><span class='int'>16</span><span class='rparen'>)</span> <span class='op'>+</span> <span class='int'>4</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span><span class='lparen'>(</span><span class='int'>16</span><span class='rparen'>)</span>
+  <span class='kw'>else</span>
+    <span class='ivar'>@IfIdRegister</span><span class='period'>.</span><span class='id identifier rubyid_write'>write</span><span class='lbracket'>[</span><span class='symbol'>:incrPC</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='lparen'>(</span><span class='ivar'>@starting_address</span><span class='period'>.</span><span class='id identifier rubyid_to_i'>to_i</span><span class='lparen'>(</span><span class='int'>16</span><span class='rparen'>)</span> <span class='op'>+</span> <span class='int'>4</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span><span class='lparen'>(</span><span class='int'>16</span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="memStage-instance_method">
+  
+    #<strong>memStage</strong>  &#x21d2; <tt>void</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p class="note returns_void">This method returns an undefined value.</p>
+<p>memStage: Memory Access If the instruction is a load, then we get the data
+from the address calculated in the Execute stage and store it in the
+register. If it is a store, then we store the result in main memory.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+269
+270
+271
+272
+273
+274
+275
+276
+277
+278
+279
+280
+281
+282
+283
+284
+285
+286
+287
+288
+289
+290
+291
+292</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'pipeline_simulation.rb', line 269</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_memStage'>memStage</span>
+  <span class='comment'># noop
+</span>  <span class='kw'>if</span> <span class='ivar'>@ExMemRegister</span><span class='period'>.</span><span class='id identifier rubyid_read'>read</span><span class='lbracket'>[</span><span class='symbol'>:control</span><span class='rbracket'>]</span> <span class='op'>==</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>000000000</span><span class='tstring_end'>&quot;</span></span>
+    <span class='ivar'>@MemWbRegister</span><span class='period'>.</span><span class='id identifier rubyid_write'>write</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='label'>control:</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>000000000</span><span class='tstring_end'>&quot;</span></span> <span class='rbrace'>}</span>
+  <span class='kw'>else</span>
+    <span class='comment'># if this is the first one, set control to a hash
+</span>    <span class='kw'>if</span> <span class='ivar'>@MemWbRegister</span><span class='period'>.</span><span class='id identifier rubyid_write'>write</span><span class='lbracket'>[</span><span class='symbol'>:control</span><span class='rbracket'>]</span> <span class='op'>==</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>000000000</span><span class='tstring_end'>&quot;</span></span>
+      <span class='ivar'>@MemWbRegister</span><span class='period'>.</span><span class='id identifier rubyid_write'>write</span><span class='lbracket'>[</span><span class='symbol'>:control</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span>
+    <span class='kw'>end</span>
+    <span class='id identifier rubyid_memRead'>memRead</span> <span class='op'>=</span> <span class='ivar'>@ExMemRegister</span><span class='period'>.</span><span class='id identifier rubyid_read'>read</span><span class='lbracket'>[</span><span class='symbol'>:control</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='symbol'>:memRead</span><span class='rbracket'>]</span>
+    <span class='id identifier rubyid_memWrite'>memWrite</span> <span class='op'>=</span> <span class='ivar'>@ExMemRegister</span><span class='period'>.</span><span class='id identifier rubyid_read'>read</span><span class='lbracket'>[</span><span class='symbol'>:control</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='symbol'>:memWrite</span><span class='rbracket'>]</span>
+    <span class='kw'>if</span> <span class='id identifier rubyid_memRead'>memRead</span> <span class='op'>==</span> <span class='int'>1</span>
+      <span class='ivar'>@MemWbRegister</span><span class='period'>.</span><span class='id identifier rubyid_write'>write</span><span class='lbracket'>[</span><span class='symbol'>:lWDataValue</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='ivar'>@mainMem</span><span class='period'>.</span><span class='id identifier rubyid_content'>content</span><span class='lbracket'>[</span><span class='ivar'>@ExMemRegister</span><span class='period'>.</span><span class='id identifier rubyid_read'>read</span><span class='lbracket'>[</span><span class='symbol'>:aLUResult</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_to_i'>to_i</span><span class='lparen'>(</span><span class='int'>16</span><span class='rparen'>)</span><span class='rbracket'>]</span>
+    <span class='kw'>elsif</span> <span class='id identifier rubyid_memWrite'>memWrite</span> <span class='op'>==</span> <span class='int'>1</span>
+      <span class='ivar'>@mainMem</span><span class='period'>.</span><span class='id identifier rubyid_content'>content</span><span class='lbracket'>[</span><span class='ivar'>@ExMemRegister</span><span class='period'>.</span><span class='id identifier rubyid_read'>read</span><span class='lbracket'>[</span><span class='symbol'>:aLUResult</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_to_i'>to_i</span><span class='lparen'>(</span><span class='int'>16</span><span class='rparen'>)</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='ivar'>@ExMemRegister</span><span class='period'>.</span><span class='id identifier rubyid_read'>read</span><span class='lbracket'>[</span><span class='symbol'>:sWValue</span><span class='rbracket'>]</span>
+    <span class='kw'>else</span>
+      <span class='ivar'>@MemWbRegister</span><span class='period'>.</span><span class='id identifier rubyid_write'>write</span><span class='lbracket'>[</span><span class='symbol'>:lWDataValue</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>X</span><span class='tstring_end'>&quot;</span></span>
+    <span class='kw'>end</span>
+    <span class='ivar'>@MemWbRegister</span><span class='period'>.</span><span class='id identifier rubyid_write'>write</span><span class='lbracket'>[</span><span class='symbol'>:aLUResult</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='ivar'>@ExMemRegister</span><span class='period'>.</span><span class='id identifier rubyid_read'>read</span><span class='lbracket'>[</span><span class='symbol'>:aLUResult</span><span class='rbracket'>]</span>
+    <span class='ivar'>@MemWbRegister</span><span class='period'>.</span><span class='id identifier rubyid_write'>write</span><span class='lbracket'>[</span><span class='symbol'>:writeRegNum</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='ivar'>@ExMemRegister</span><span class='period'>.</span><span class='id identifier rubyid_read'>read</span><span class='lbracket'>[</span><span class='symbol'>:writeRegNum</span><span class='rbracket'>]</span>
+    <span class='ivar'>@MemWbRegister</span><span class='period'>.</span><span class='id identifier rubyid_write'>write</span><span class='lbracket'>[</span><span class='symbol'>:control</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='symbol'>:memToReg</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='ivar'>@ExMemRegister</span><span class='period'>.</span><span class='id identifier rubyid_read'>read</span><span class='lbracket'>[</span><span class='symbol'>:control</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='symbol'>:memToReg</span><span class='rbracket'>]</span>
+    <span class='ivar'>@MemWbRegister</span><span class='period'>.</span><span class='id identifier rubyid_write'>write</span><span class='lbracket'>[</span><span class='symbol'>:control</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='symbol'>:regWrite</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='ivar'>@ExMemRegister</span><span class='period'>.</span><span class='id identifier rubyid_read'>read</span><span class='lbracket'>[</span><span class='symbol'>:control</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='symbol'>:regWrite</span><span class='rbracket'>]</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="printOutEverything-instance_method">
+  
+    #<strong>printOutEverything</strong>  &#x21d2; <tt>void</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p class="note returns_void">This method returns an undefined value.</p>
+<p>Prints out current clock cycle, registers, and all contents of the pipeline
+registers.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+315
+316
+317
+318
+319
+320
+321
+322
+323
+324
+325
+326
+327
+328
+329
+330
+331
+332
+333
+334
+335
+336
+337
+338
+339
+340
+341
+342
+343
+344
+345
+346</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'pipeline_simulation.rb', line 315</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_printOutEverything'>printOutEverything</span>
+  <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>-----------------</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>| Clock Cycle </span><span class='embexpr_beg'>#{</span><span class='ivar'>@cycle_num</span><span class='embexpr_end'>}</span><span class='tstring_content'> |</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>-----------------</span><span class='tstring_end'>&quot;</span></span>
+  <span class='ivar'>@regs</span><span class='period'>.</span><span class='id identifier rubyid_show'>show</span>
+  <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span>
+  <span class='lbracket'>[</span><span class='ivar'>@IfIdRegister</span><span class='comma'>,</span> <span class='ivar'>@IdExRegister</span><span class='comma'>,</span> <span class='ivar'>@ExMemRegister</span><span class='comma'>,</span> <span class='ivar'>@MemWbRegister</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_register'>register</span><span class='op'>|</span>
+    <span class='lbracket'>[</span><span class='symbol'>:write</span><span class='comma'>,</span> <span class='symbol'>:read</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_side'>side</span><span class='op'>|</span>
+      <span class='id identifier rubyid_puts'>puts</span> <span class='id identifier rubyid_register'>register</span><span class='period'>.</span><span class='id identifier rubyid_title'>title</span> <span class='op'>+</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'> </span><span class='tstring_end'>&quot;</span></span> <span class='op'>+</span> <span class='id identifier rubyid_side'>side</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span><span class='period'>.</span><span class='id identifier rubyid_capitalize'>capitalize</span>
+      <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>--------------------</span><span class='tstring_end'>&quot;</span></span>
+      <span class='id identifier rubyid_other_keys'>other_keys</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span>
+      <span class='comment'># for each side, get the keys and values
+</span>      <span class='id identifier rubyid_register'>register</span><span class='period'>.</span><span class='id identifier rubyid_send'>send</span><span class='lparen'>(</span><span class='id identifier rubyid_side'>side</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_key'>key</span><span class='comma'>,</span> <span class='id identifier rubyid_value'>value</span><span class='op'>|</span>
+        <span class='comment'># if it is the control hash
+</span>        <span class='kw'>if</span> <span class='id identifier rubyid_value'>value</span><span class='period'>.</span><span class='id identifier rubyid_is_a?'>is_a?</span><span class='lparen'>(</span><span class='const'>Hash</span><span class='rparen'>)</span>
+          <span class='id identifier rubyid_control'>control</span> <span class='op'>=</span> <span class='id identifier rubyid_key'>key</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span><span class='period'>.</span><span class='id identifier rubyid_capitalize'>capitalize</span> <span class='op'>+</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>: </span><span class='tstring_end'>&quot;</span></span>
+          <span class='id identifier rubyid_value'>value</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_key'>key</span><span class='comma'>,</span> <span class='id identifier rubyid_value'>value</span><span class='op'>|</span>
+            <span class='id identifier rubyid_control'>control</span> <span class='op'>+=</span> <span class='id identifier rubyid_key'>key</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span> <span class='op'>+</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'> = </span><span class='tstring_end'>&quot;</span></span> <span class='op'>+</span> <span class='id identifier rubyid_value'>value</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span> <span class='op'>+</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>, </span><span class='tstring_end'>&quot;</span></span>
+          <span class='kw'>end</span>
+          <span class='id identifier rubyid_puts'>puts</span> <span class='id identifier rubyid_control'>control</span>
+        <span class='comment'># otherwise, it&#39;s just normal contents
+</span>        <span class='kw'>else</span>
+          <span class='id identifier rubyid_other_keys'>other_keys</span> <span class='op'>+=</span> <span class='id identifier rubyid_key'>key</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span> <span class='op'>+</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'> = </span><span class='tstring_end'>&quot;</span></span> <span class='op'>+</span> <span class='id identifier rubyid_value'>value</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span> <span class='op'>+</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>  </span><span class='tstring_end'>&quot;</span></span>
+        <span class='kw'>end</span>
+      <span class='kw'>end</span>
+      <span class='id identifier rubyid_puts'>puts</span> <span class='id identifier rubyid_other_keys'>other_keys</span>
+      <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span>
+    <span class='kw'>end</span>
+    <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="runthrough-instance_method">
+  
+    #<strong>runthrough</strong>(instructions)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>MEM/WB Register Read</p>
+
+<pre class="code ruby"><code class="ruby"><span class='op'>-</span><span class='op'>-</span><span class='op'>-</span><span class='op'>-</span><span class='op'>-</span><span class='op'>-</span><span class='op'>-</span><span class='op'>-</span><span class='op'>-</span><span class='op'>-</span><span class='op'>-</span><span class='op'>-</span><span class='op'>-</span><span class='op'>-</span><span class='op'>-</span><span class='op'>-</span><span class='op'>-</span><span class='op'>-</span><span class='op'>-</span><span class='op'>-</span>
+<span class='id identifier rubyid_control'>control</span> <span class='op'>=</span> <span class='int'>000000000</span>
+</code></pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'pipeline_simulation.rb', line 153</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_runthrough'>runthrough</span><span class='lparen'>(</span><span class='id identifier rubyid_instructions'>instructions</span><span class='rparen'>)</span>
+  <span class='ivar'>@cycle_num</span> <span class='op'>+=</span> <span class='int'>1</span>
+  <span class='id identifier rubyid_instructions'>instructions</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span> <span class='id identifier rubyid_instruction'>instruction</span> <span class='op'>|</span>
+    <span class='id identifier rubyid_ifStage'>ifStage</span><span class='lparen'>(</span><span class='id identifier rubyid_instruction'>instruction</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_idStage'>idStage</span>
+    <span class='id identifier rubyid_exStage'>exStage</span>
+    <span class='id identifier rubyid_memStage'>memStage</span>
+    <span class='id identifier rubyid_wbStage'>wbStage</span>
+    <span class='id identifier rubyid_printOutEverything'>printOutEverything</span>
+    <span class='id identifier rubyid_copyWriteToRead'>copyWriteToRead</span>
+    <span class='ivar'>@cycle_num</span> <span class='op'>+=</span> <span class='int'>1</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="wbStage-instance_method">
+  
+    #<strong>wbStage</strong>  &#x21d2; <tt>void</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p class="note returns_void">This method returns an undefined value.</p>
+<p>wbStage: Register Write Back If writing to registers (add, sub, or load),
+then write the given value to the register.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Raises:</p>
+<ul class="raise">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>ArgumentError</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>expected 1 or 0 for memToReg</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+298
+299
+300
+301
+302
+303
+304
+305
+306
+307
+308
+309
+310
+311</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'pipeline_simulation.rb', line 298</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_wbStage'>wbStage</span>
+  <span class='kw'>return</span> <span class='kw'>if</span> <span class='ivar'>@MemWbRegister</span><span class='period'>.</span><span class='id identifier rubyid_read'>read</span><span class='lbracket'>[</span><span class='symbol'>:control</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_is_a?'>is_a?</span> <span class='const'>String</span>
+  <span class='id identifier rubyid_regWrite'>regWrite</span> <span class='op'>=</span> <span class='ivar'>@MemWbRegister</span><span class='period'>.</span><span class='id identifier rubyid_read'>read</span><span class='lbracket'>[</span><span class='symbol'>:control</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='symbol'>:regWrite</span><span class='rbracket'>]</span>
+  <span class='id identifier rubyid_memToReg'>memToReg</span> <span class='op'>=</span> <span class='ivar'>@MemWbRegister</span><span class='period'>.</span><span class='id identifier rubyid_read'>read</span><span class='lbracket'>[</span><span class='symbol'>:control</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='symbol'>:memToReg</span><span class='rbracket'>]</span>
+  <span class='kw'>if</span> <span class='id identifier rubyid_regWrite'>regWrite</span> <span class='op'>==</span> <span class='int'>1</span>
+    <span class='kw'>if</span> <span class='id identifier rubyid_memToReg'>memToReg</span> <span class='op'>==</span> <span class='int'>1</span>
+      <span class='ivar'>@regs</span><span class='period'>.</span><span class='id identifier rubyid_content'>content</span><span class='lbracket'>[</span><span class='ivar'>@MemWbRegister</span><span class='period'>.</span><span class='id identifier rubyid_read'>read</span><span class='lbracket'>[</span><span class='symbol'>:writeRegNum</span><span class='rbracket'>]</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='ivar'>@MemWbRegister</span><span class='period'>.</span><span class='id identifier rubyid_read'>read</span><span class='lbracket'>[</span><span class='symbol'>:lWDataValue</span><span class='rbracket'>]</span>
+    <span class='kw'>elsif</span> <span class='id identifier rubyid_memToReg'>memToReg</span> <span class='op'>==</span> <span class='int'>0</span>
+      <span class='ivar'>@regs</span><span class='period'>.</span><span class='id identifier rubyid_content'>content</span><span class='lbracket'>[</span><span class='ivar'>@MemWbRegister</span><span class='period'>.</span><span class='id identifier rubyid_read'>read</span><span class='lbracket'>[</span><span class='symbol'>:writeRegNum</span><span class='rbracket'>]</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='ivar'>@MemWbRegister</span><span class='period'>.</span><span class='id identifier rubyid_read'>read</span><span class='lbracket'>[</span><span class='symbol'>:aLUResult</span><span class='rbracket'>]</span>
+    <span class='kw'>else</span>
+      <span class='id identifier rubyid_raise'>raise</span> <span class='const'>ArgumentError</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Expecting 1 or 0 for memToReg. Got </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_memToReg'>memToReg</span><span class='embexpr_end'>}</span><span class='tstring_content'>.</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+    <span class='kw'>end</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+
+      <div id="footer">
+  Generated on Mon Nov 28 10:31:51 2016 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.9.5 (ruby-2.2.1).
+</div>
+
+    </div>
+  </body>
+</html>
