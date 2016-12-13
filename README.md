@@ -8,6 +8,7 @@ While learning more about computer architecture, I wrote some Ruby scripts:
 View full docs at: https://jmkoni.github.io/computer-architecture-with-ruby
 
 View source code at: https://github.com/jmkoni/computer-architecture-with-ruby
+
 ***
 
 ### MIPS Disassembler
