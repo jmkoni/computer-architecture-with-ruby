@@ -6,6 +6,7 @@ While learning more about computer architecture, I wrote some Ruby scripts:
 * Pipeline Simulation - a program that takes an array of instructions and passes them through each step of a simulated pipeline, updating the registers on each.
 
 View full docs at: https://jmkoni.github.io/computer-architecture-with-ruby
+
 View source code at: https://github.com/jmkoni/computer-architecture-with-ruby
 ***
 
