@@ -13,17 +13,17 @@ View source code at: https://github.com/jmkoni/computer-architecture-with-ruby
 
 ### MIPS Disassembler
 This class disassembles instructions from hex or binary to human readable Mips
-####Initialization:
+#### Initialization:
 ```ruby
 MipsDisassember.new(array_of_instructions, starting_address, is_hex)
 ```
-####Definition of parameters:
+#### Definition of parameters:
 
 * array_of_instructions: an array of instructions in hex or binary. Will generally be strings.
 * starting_address: whatever address you want the instructions to start at
 * is_hex: true or false, depending on whether or not the instructions are hex or not true if hex, false if binary
 
-####Example:
+#### Example:
 ```ruby
 array_of_hex = ["0x022DA822",
                 "0x8EF30018",
@@ -42,7 +42,7 @@ results = mips.disassemble
 results.each { |instruction| puts instruction }
 ```
 
-####Output:
+#### Output:
 ```
     7A060 sub $21 $17 $13
     7a064 lw $19, 24 ($23)
@@ -64,23 +64,23 @@ This class creates a simulation of a cache. Currently it is built to
 take in an array of actions. It could easily be rewritten to take in user
 input instead.
 
-####Initialization:
+#### Initialization:
 ```ruby
 cache = CacheSim::Cache.new(size)
 ```
 
-####Definition of parameters:
+#### Definition of parameters:
 
 * size: integer, reflects the number and size of slots. Ex. with this one, there are 16 slots and each slot has space for 16 pieces of data
 * operations: a list of operations Ex: ["R", "4C3", "D", "W", "14C", "99"]
 
-####Example####
+#### Example:
 ```ruby
 cache = CacheSim::Cache.new(16)
 cache.perform_actions(["R", "4C3", "D", "W", "14C", "99"])
 ```
 
-####Output####
+#### Output:
 ```
     (R)ead, (W)rite, or (D)isplay cache?
     R
@@ -119,17 +119,17 @@ cache.perform_actions(["R", "4C3", "D", "W", "14C", "99"])
 ### Pipeline Simulation
 This class creates a simulation of a pipeline.
 
-####Initialization:
+#### Initialization:
 ```ruby
 simulation = PipelineSim.new(starting_address)
 simulation.runthrough(instructions)
 ```
 
-####Definition of parameters:
+#### Definition of parameters:
 * starting_address: starting address of the first instruction (in hex)
 * instructions: array of mips instructions, in hex
 
-####Example####
+#### Example:
 ```ruby
 instructions = ["0x00a63820",
                 "0x8d0f0004",
@@ -143,7 +143,7 @@ simulation = PipelineSim.new("0x70000")
 simulation.runthrough(instructions)
 ```
 
-####Output####
+#### Output:
 ```
     -----------------
     | Clock Cycle 1 |
