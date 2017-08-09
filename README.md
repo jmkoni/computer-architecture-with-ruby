@@ -43,6 +43,7 @@ results.each { |instruction| puts instruction }
 ```
 
 ####Output:####
+```
     7A060 sub $21 $17 $13
     7a064 lw $19, 24 ($23)
     7a068 beq $7, $21, address 0x7a07c
@@ -54,6 +55,7 @@ results.each { |instruction| puts instruction }
     7a080 or $21 $21 $4
     7a084 bne $15, $12, address 0xba060
     7a088 lw $25, -16 ($18)
+```
 
 ***
 
@@ -79,6 +81,7 @@ cache.perform_actions(["R", "4C3", "D", "W", "14C", "99"])
 ```
 
 ####Output####
+```
     (R)ead, (W)rite, or (D)isplay cache?
     R
     What address would you like read?
@@ -109,6 +112,7 @@ cache.perform_actions(["R", "4C3", "D", "W", "14C", "99"])
     14C
     What data would you like to write at that address?
     99
+```
 
 ***
 
@@ -140,6 +144,7 @@ simulation.runthrough(instructions)
 ```
 
 ####Output####
+```
     -----------------
     | Clock Cycle 1 |
     -----------------
@@ -223,3 +228,4 @@ simulation.runthrough(instructions)
     MEM/WB Register Read
     --------------------
     control = 000000000
+```
